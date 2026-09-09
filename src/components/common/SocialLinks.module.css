@@ -1,0 +1,44 @@
+.socials {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.socials a,
+.socials span {
+  display: inline-flex;
+  width: 31px;
+  height: 31px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--color-cream);
+  opacity: 0.78;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.socials svg {
+  width: 17px;
+  height: 17px;
+}
+
+.socials a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: rgba(158, 222, 232, 0.56);
+}
+
+.socials span {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.compact a,
+.compact span {
+  width: 28px;
+  height: 28px;
+}

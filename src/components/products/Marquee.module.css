@@ -1,0 +1,40 @@
+.marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  min-width: 200%;
+  animation: move 28s linear infinite;
+}
+
+.track span {
+  flex: 0 0 auto;
+  padding: 12px 18px;
+  color: var(--color-accent);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.track span::after {
+  padding-left: 18px;
+  color: var(--color-brass);
+  content: "✦";
+}
+
+@keyframes move {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 520px) {
+  .track {
+    animation-duration: 36s;
+  }
+}

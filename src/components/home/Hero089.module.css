@@ -1,0 +1,164 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: calc(var(--navbar-height) + 36px) 4vw 52px;
+  perspective: 1100px;
+}
+
+.media {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 34%, rgba(158, 222, 232, 0.2), transparent 24%),
+    linear-gradient(90deg, rgba(7, 16, 14, 0.9), rgba(7, 16, 14, 0.24) 52%, rgba(7, 16, 14, 0.86)),
+    linear-gradient(0deg, rgba(7, 16, 14, 0.95), transparent 36%);
+}
+
+.stage {
+  position: absolute;
+  inset: 13vh 6vw 12vh auto;
+  width: min(52vw, 760px);
+  transform-style: preserve-3d;
+  transition: transform 0.2s linear;
+}
+
+.number {
+  position: absolute;
+  right: 0;
+  bottom: 4vh;
+  color: rgba(244, 238, 229, 0.9);
+  font-family: var(--font-display);
+  font-size: clamp(9rem, 24vw, 24rem);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: 0;
+  text-shadow: 0 30px 90px rgba(0, 0, 0, 0.58);
+}
+
+.chip,
+.card {
+  position: absolute;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(7, 16, 14, 0.48);
+  backdrop-filter: blur(14px);
+}
+
+.chip {
+  top: 17%;
+  right: 8%;
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.card {
+  right: 8%;
+  bottom: 1%;
+  display: grid;
+  gap: 2px;
+  min-width: 210px;
+  padding: 14px 18px;
+}
+
+.card p,
+.card span {
+  margin: 0;
+}
+
+.card p {
+  font-weight: 800;
+}
+
+.card span {
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.copy {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: 18px;
+  width: min(650px, 92vw);
+}
+
+.copy h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 10vw, 8.6rem);
+  font-weight: 900;
+  line-height: 0.86;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.copy p {
+  margin: 0;
+  color: rgba(244, 238, 229, 0.8);
+}
+
+.scrollCue {
+  position: absolute;
+  right: 4vw;
+  bottom: 32px;
+  color: rgba(244, 238, 229, 0.58);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 92svh;
+    padding: calc(var(--navbar-height) + 48px) 20px 38px;
+  }
+
+  .stage {
+    inset: 16vh 8vw auto;
+    width: auto;
+    height: 52vh;
+  }
+
+  .number {
+    right: -4vw;
+    bottom: 12vh;
+    font-size: clamp(8rem, 39vw, 13rem);
+  }
+
+  .chip {
+    top: 5%;
+    right: 0;
+  }
+
+  .card {
+    right: 0;
+    bottom: 0;
+    min-width: 0;
+  }
+
+  .copy {
+    gap: 14px;
+  }
+
+  .scrollCue {
+    display: none;
+  }
+}

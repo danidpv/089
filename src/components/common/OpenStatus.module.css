@@ -1,0 +1,28 @@
+.status {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 34px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid rgba(244, 238, 229, 0.22);
+  border-radius: 999px;
+  color: rgba(244, 238, 229, 0.78);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.status::before {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  content: "";
+  background: #b55d4f;
+}
+
+.open::before {
+  background: var(--color-accent);
+  box-shadow: 0 0 16px rgba(158, 222, 232, 0.72);
+}

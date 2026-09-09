@@ -1,0 +1,79 @@
+.hero {
+  position: relative;
+  min-height: 78svh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  padding: calc(var(--navbar-height) + 70px) 5vw 72px;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(7, 16, 14, 0.94), rgba(7, 16, 14, 0.38), rgba(7, 16, 14, 0.9));
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 18px;
+  width: min(760px, 100%);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 16vw, 15rem);
+  font-weight: 900;
+  line-height: 0.82;
+  text-transform: uppercase;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 62ch;
+  color: rgba(244, 238, 229, 0.8);
+  line-height: 1.7;
+}
+
+.hero a {
+  width: fit-content;
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.services {
+  color: var(--color-ink);
+  background:
+    linear-gradient(rgba(244, 238, 229, 0.93), rgba(244, 238, 229, 0.97)),
+    url("/images/barberia/interior-02.jpg") center / cover fixed;
+}
+
+.services :global(.lead) {
+  color: rgba(15, 21, 18, 0.68);
+}
+
+.grid {
+  display: grid;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 70svh;
+    padding-inline: 20px;
+  }
+
+  .services {
+    background-attachment: scroll;
+  }
+}

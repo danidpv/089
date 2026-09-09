@@ -1,0 +1,109 @@
+.visit {
+  color: var(--color-ink);
+  background:
+    linear-gradient(rgba(244, 238, 229, 0.93), rgba(244, 238, 229, 0.96)),
+    url("/images/barberia/interior-01.jpg") center / cover;
+  padding: clamp(72px, 9vw, 116px) 5vw;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(230px, 0.8fr) minmax(280px, 1fr) minmax(260px, 0.9fr);
+  gap: 24px;
+  align-items: stretch;
+  width: min(100%, var(--container-width));
+  margin-inline: auto;
+}
+
+.visit h2 {
+  margin: 0 0 22px;
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 8vw, 8rem);
+  font-weight: 900;
+  line-height: 0.84;
+  text-transform: uppercase;
+}
+
+.panel,
+.map {
+  border: 1px solid var(--line-dark);
+  border-radius: 8px;
+  background: rgba(244, 238, 229, 0.84);
+}
+
+.panel {
+  display: grid;
+  gap: 22px;
+  padding: clamp(22px, 4vw, 38px);
+}
+
+.panel address {
+  display: grid;
+  gap: 5px;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.panel address strong {
+  margin-bottom: 6px;
+  font-size: 1.18rem;
+}
+
+.phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.actions a:not([data-testid]) {
+  display: inline-flex;
+  min-height: 43px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.map {
+  display: grid;
+  place-content: center;
+  gap: 14px;
+  min-height: 280px;
+  padding: 24px;
+  color: var(--color-cream);
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(7, 16, 14, 0.32), rgba(7, 16, 14, 0.82)),
+    url("/images/branding/window-logo.jpg") center / cover;
+}
+
+.map span {
+  font-weight: 900;
+}
+
+.map a {
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 960px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}

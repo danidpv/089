@@ -1,0 +1,97 @@
+.card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 1.18 / 1;
+  overflow: hidden;
+}
+
+.media img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .media img {
+  transform: scale(1.04);
+}
+
+.media span {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 7px 9px;
+  border-radius: 999px;
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  font-size: 0.56rem;
+  font-weight: 950;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.body {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+}
+
+.body h4,
+.body p {
+  margin: 0;
+}
+
+.body h4 {
+  font-size: 1rem;
+  line-height: 1.16;
+}
+
+.body p {
+  color: rgba(244, 238, 229, 0.68);
+  font-size: 0.86rem;
+  line-height: 1.42;
+}
+
+.body div {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding-top: 2px;
+}
+
+.body span {
+  color: rgba(244, 238, 229, 0.56);
+  font-size: 0.62rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.body a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--color-cream);
+  background: transparent;
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 430px) {
+  .body div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
