@@ -9,6 +9,7 @@
   transition:
     opacity 0.8s ease,
     visibility 0.8s ease;
+  animation: introFallbackOut 3s ease forwards;
 }
 
 .intro::before,
@@ -79,5 +80,20 @@
     opacity: 0.54;
     filter: none;
     transform: none;
+  }
+}
+
+@keyframes introFallbackOut {
+  0%,
+  76% {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 }

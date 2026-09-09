@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { MouseEvent } from "react";
 import { useEffect, useId, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { BooksyButton } from "@/components/common/BooksyButton";
@@ -39,16 +40,37 @@ export function Navbar() {
     return pathname === href || (href.startsWith("/#") && pathname === "/");
   };
 
+  const handleHomeClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
+    if (pathname === "/") {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleNavClick = (href: string, event: MouseEvent<HTMLAnchorElement>) => {
+    if (href === "/") {
+      handleHomeClick(event);
+      return;
+    }
+    setOpen(false);
+  };
+
   return (
     <header className={`${styles.navbar} ${scrolled || open ? styles.scrolled : ""}`}>
-      <Link className={styles.brand} href="/" onClick={() => setOpen(false)}>
+      <Link className={styles.brand} href="/" onClick={handleHomeClick}>
         <b>089</b>
         <span>Barbería Profesional</span>
       </Link>
       <SocialLinks compact />
       <nav className={styles.links} aria-label="Navegación principal">
         {siteConfig.navItems.map((item) => (
-          <Link key={item.href} href={item.href} className={isActive(item.href) ? styles.active : ""}>
+          <Link
+            key={item.href}
+            href={item.href}
+            className={isActive(item.href) ? styles.active : ""}
+            onClick={(event) => handleNavClick(item.href, event)}
+          >
             {item.label}
           </Link>
         ))}
@@ -66,7 +88,7 @@ export function Navbar() {
       </button>
       <div className={`${styles.mobileMenu} ${open ? styles.open : ""}`} id={menuId}>
         {siteConfig.navItems.map((item) => (
-          <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
+          <Link key={item.href} href={item.href} onClick={(event) => handleNavClick(item.href, event)}>
             {item.label}
           </Link>
         ))}
