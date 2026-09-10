@@ -2,20 +2,14 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef } from "react";
-import { normalizeCategory, productCategoryLabels, productCollections, products } from "@/data/products";
+import { normalizeCategory, productCategoryLabels, products } from "@/data/products";
 import type { ProductCategory } from "@/data/types";
-import { Marquee } from "./Marquee";
 import { ProductCard } from "./ProductCard";
 import styles from "./ProductExplorer.module.css";
 
 const filters: Array<["todo" | ProductCategory, string]> = [
   ["todo", "Todo"],
-  ["ceras", "Ceras"],
-  ["polvos", "Polvos"],
-  ["shampoos", "Shampoos"],
-  ["barba", "Barba"],
-  ["peines", "Peines"],
-  ["geles", "Geles"]
+  ...(Object.entries(productCategoryLabels) as Array<[ProductCategory, string]>)
 ];
 
 export function ProductExplorer() {
@@ -31,18 +25,11 @@ export function ProductExplorer() {
     }
   }, [activeCategory]);
 
-  const visibleByCollection = useMemo(() => {
-    return productCollections.map((collection) => {
-      const collectionProducts = collection.productIds
-        .map((id) => products.find((product) => product.id === id))
-        .filter((product): product is NonNullable<typeof product> => Boolean(product))
-        .filter((product) => {
-          const categories = new Set([product.category, ...(product.categories ?? [])]);
-          return activeCategory === "todo" || categories.has(activeCategory);
-        });
-      return { ...collection, products: collectionProducts };
-    });
+  const visibleProducts = useMemo(() => {
+    return products.filter((product) => activeCategory === "todo" || product.category === activeCategory);
   }, [activeCategory]);
+
+  const soldOutCount = visibleProducts.filter((product) => product.availability === "sold-out").length;
 
   const setFilter = (category: "todo" | ProductCategory) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -68,27 +55,25 @@ export function ProductExplorer() {
         ))}
       </div>
       {activeCategory !== "todo" ? (
-        <p className={styles.notice}>Mostrando categoría: {productCategoryLabels[activeCategory]}</p>
+        <p className={styles.notice}>Mostrando categoria: {productCategoryLabels[activeCategory]}</p>
       ) : null}
-      {visibleByCollection.map((collection) =>
-        collection.products.length > 0 ? (
-          <section className={styles.block} key={collection.id} data-testid={`collection-${collection.id}`}>
-            <div className={styles.blockHead}>
-              <span>{collection.number}</span>
-              <div>
-                <h3>{collection.title}</h3>
-                <p>{collection.copy}</p>
-              </div>
-            </div>
-            <div className={styles.grid}>
-              {collection.products.map((product) => (
-                <ProductCard product={product} key={`${collection.id}-${product.id}`} />
-              ))}
-            </div>
-            <Marquee items={collection.marquee} />
-          </section>
-        ) : null
-      )}
+      <section className={styles.block} data-testid="catalogo-089wear">
+        <div className={styles.blockHead}>
+          <span>{visibleProducts.length}</span>
+          <div>
+            <h3>Catalogo 089.</h3>
+            <p>
+              Productos fisicos reales publicados hoy en 089Wear. La compra continua siempre en SumUp
+              {soldOutCount > 0 ? ` - ${soldOutCount} agotado${soldOutCount === 1 ? "" : "s"}` : ""}.
+            </p>
+          </div>
+        </div>
+        <div className={styles.grid}>
+          {visibleProducts.map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

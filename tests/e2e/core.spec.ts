@@ -43,9 +43,20 @@ test("carta loads services and prices", async ({ page }) => {
 });
 
 test("productos loads and filters by url", async ({ page }) => {
-  await page.goto("/productos?categoria=ceras");
-  await expect(page.getByRole("button", { name: "Ceras" })).toHaveAttribute("aria-pressed", "true");
-  await expect(page.locator("[data-active-category='ceras']")).toBeVisible();
+  await page.goto("/productos?categoria=cabello");
+  await expect(page.getByRole("button", { name: "Cabello" })).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator("[data-active-category='cabello']")).toBeVisible();
+  await expect(page.getByText("POMADA DELUXE")).toBeVisible();
+  await expect(page.getByText(/21,00\s*€/).first()).toBeVisible();
+});
+
+test("productos uses real 089Wear catalog data", async ({ page }) => {
+  await page.goto("/productos");
+  await expect(page.getByTestId("catalogo-089wear")).toBeVisible();
+  await expect(page.getByText("BEARD BALM")).toBeVisible();
+  await expect(page.getByText("Agotado").first()).toBeVisible();
+  await expect(page.locator('[data-testid="product-card"][href="https://www.089wear.com/product/pomada-deluxe"]')).toHaveCount(1);
+  await expect(page.getByText("Corte de Caballero")).toHaveCount(0);
 });
 
 test("home cards navigate to carta and productos", async ({ page }) => {
@@ -61,9 +72,9 @@ test("home cards navigate to carta and productos", async ({ page }) => {
 
 test("service recommendation opens product category", async ({ page }) => {
   await page.goto("/carta");
-  await page.getByRole("link", { name: "Ceras" }).first().click();
-  await expect(page).toHaveURL(/\/productos\?categoria=ceras$/);
-  await expect(page.getByRole("button", { name: "Ceras" })).toHaveAttribute("aria-pressed", "true");
+  await page.getByRole("link", { name: "Cabello" }).first().click();
+  await expect(page).toHaveURL(/\/productos\?categoria=cabello$/);
+  await expect(page.getByRole("button", { name: "Cabello" })).toHaveAttribute("aria-pressed", "true");
 });
 
 test("navbar links and booksy target are correct", async ({ page }) => {

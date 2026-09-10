@@ -1,10 +1,10 @@
 export type ProductCategory =
-  | "ceras"
-  | "polvos"
-  | "shampoos"
-  | "barba"
-  | "peines"
-  | "geles";
+  | "cabello"
+  | "champu-acondicionador"
+  | "barba-bigote"
+  | "afeitado"
+  | "facial"
+  | "cepillos-peines";
 
 export type ServiceCategory = "corte" | "barba" | "corte-barba";
 
@@ -31,14 +31,15 @@ export type Service = {
 
 export type Product = {
   id: string;
+  slug: string;
   name: string;
   category: ProductCategory;
-  categories?: ProductCategory[];
-  summary: string;
-  status: string;
-  badge?: string;
+  price: number;
+  currency: "EUR";
+  availability: "available" | "sold-out";
   image: string;
   alt: string;
+  externalUrl: string;
 };
 
 export type ProductCollection = {

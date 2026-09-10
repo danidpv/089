@@ -16,7 +16,7 @@ const cards = [
     eyebrow: "089 Selection",
     title: "Productos.",
     href: "/productos",
-    image: "/images/productos/ceras/product-shelf-01.jpg",
+    image: "/images/productos/cabello/pomada-deluxe.webp",
     alt: "Productos disponibles en 089"
   },
   {

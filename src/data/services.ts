@@ -14,7 +14,7 @@ export const services: Service[] = [
     durationMinutes: 40,
     price: 16,
     description: "Incluye pre-lavado",
-    recommendedProductCategories: ["shampoos", "polvos", "ceras"]
+    recommendedProductCategories: ["champu-acondicionador", "cabello"]
   },
   {
     id: "corte-nino",
@@ -22,7 +22,7 @@ export const services: Service[] = [
     category: "corte",
     durationMinutes: 40,
     price: 15,
-    recommendedProductCategories: ["shampoos", "peines", "ceras"]
+    recommendedProductCategories: ["champu-acondicionador", "cepillos-peines", "cabello"]
   },
   {
     id: "rasurado-cabeza",
@@ -30,7 +30,7 @@ export const services: Service[] = [
     category: "corte",
     durationMinutes: 30,
     price: 13,
-    recommendedProductCategories: ["shampoos", "geles", "ceras"]
+    recommendedProductCategories: ["champu-acondicionador", "cabello"]
   },
   {
     id: "perfilado-barba",
@@ -38,7 +38,7 @@ export const services: Service[] = [
     category: "barba",
     durationMinutes: 30,
     price: 13,
-    recommendedProductCategories: ["barba", "peines", "barba"]
+    recommendedProductCategories: ["barba-bigote", "cepillos-peines"]
   },
   {
     id: "arreglo-barba",
@@ -46,7 +46,7 @@ export const services: Service[] = [
     category: "barba",
     durationMinutes: 40,
     price: 15,
-    recommendedProductCategories: ["barba", "barba", "peines"]
+    recommendedProductCategories: ["barba-bigote", "cepillos-peines"]
   },
   {
     id: "corte-perfilado-barba",
@@ -54,7 +54,7 @@ export const services: Service[] = [
     category: "corte-barba",
     durationMinutes: 40,
     price: 19.5,
-    recommendedProductCategories: ["shampoos", "ceras", "barba"]
+    recommendedProductCategories: ["champu-acondicionador", "cabello", "barba-bigote"]
   },
   {
     id: "corte-barba-completa",
@@ -62,7 +62,7 @@ export const services: Service[] = [
     category: "corte-barba",
     durationMinutes: 60,
     price: 23,
-    recommendedProductCategories: ["shampoos", "polvos", "barba"]
+    recommendedProductCategories: ["champu-acondicionador", "cabello", "barba-bigote"]
   },
   {
     id: "rasurado-barba",
@@ -70,6 +70,6 @@ export const services: Service[] = [
     category: "corte-barba",
     durationMinutes: 40,
     price: 19.5,
-    recommendedProductCategories: ["geles", "barba", "barba"]
+    recommendedProductCategories: ["cabello", "barba-bigote"]
   }
 ];

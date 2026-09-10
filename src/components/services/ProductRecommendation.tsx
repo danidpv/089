@@ -5,21 +5,21 @@ import type { ProductCategory } from "@/data/types";
 import styles from "./ProductRecommendation.module.css";
 
 const previewImages: Record<ProductCategory, string> = {
-  ceras: "/images/productos/ceras/matte-pomade.jpg",
-  polvos: "/images/productos/polvos/styling-powder.jpg",
-  shampoos: "/images/productos/shampoos/daily-shampoo.jpg",
-  barba: "/images/productos/barba/beard-oil.jpg",
-  peines: "/images/barberia/recepcion.jpg",
-  geles: "/images/productos/geles/sea-salt-spray.jpg"
+  cabello: "/images/productos/cabello/pomada-deluxe.webp",
+  "champu-acondicionador": "/images/productos/champu-acondicionador/3-in-1-wash.webp",
+  "barba-bigote": "/images/productos/barba-bigote/beard-oil.webp",
+  afeitado: "/images/productos/afeitado/aftershave-suavecito-cristal.webp",
+  facial: "/images/productos/facial/limpiador-facial-exfoliante.webp",
+  "cepillos-peines": "/images/productos/cepillos-peines/pocket-comb.webp"
 };
 
 const helper: Record<ProductCategory, string> = {
-  ceras: "Fijación y acabado",
-  polvos: "Textura y volumen",
-  shampoos: "Limpieza y cuidado diario",
-  barba: "Suavidad e hidratación",
-  peines: "Mantenimiento",
-  geles: "Definición"
+  cabello: "Fijacion y acabado",
+  "champu-acondicionador": "Limpieza y cuidado diario",
+  "barba-bigote": "Suavidad e hidratacion",
+  afeitado: "Ritual de afeitado",
+  facial: "Cuidado de la piel",
+  "cepillos-peines": "Mantenimiento"
 };
 
 export function ProductRecommendation({ categories }: { categories: ProductCategory[] }) {

@@ -55,7 +55,7 @@
 .products {
   background:
     linear-gradient(180deg, rgba(7, 16, 14, 0.92), rgba(7, 16, 14, 0.97)),
-    url("/images/productos/ceras/uppercut-display.jpg") center / cover fixed;
+    url("/images/productos/cabello/pomada-deluxe.webp") center / cover fixed;
 }
 
 .products :global(.section-head) {

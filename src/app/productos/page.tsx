@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 export const metadata: Metadata = {
   title: "Productos profesionales",
   description:
-    "Productos profesionales recomendados por 089 Barbería Profesional: styling, cuidado, barba y mantenimiento diario."
+    "Catalogo real de productos fisicos de 089Wear: styling, champu, barba, afeitado y herramientas con compra en SumUp."
 };
 
 export default function ProductosPage() {
@@ -17,29 +17,30 @@ export default function ProductosPage() {
       <section className={styles.hero}>
         <Image
           className={styles.heroImage}
-          src="/images/productos/ceras/product-shelf-01.jpg"
+          src="/images/productos/cabello/pomada-deluxe.webp"
           alt=""
           fill
           sizes="100vw"
           fetchPriority="high"
+          loading="eager"
           priority
         />
         <div className={styles.heroBg} />
         <div className={styles.heroInner}>
           <p className="kicker">Productos 089</p>
           <h1>Productos 089.</h1>
-          <p>Styling, cuidado, barba y mantenimiento diario. Descubre la selección de 089 y filtra por lo que necesitas.</p>
-          <Link href="/">← Volver a Inicio</Link>
+          <p>Productos fisicos reales de 089Wear. Mira el catalogo y compra siempre fuera de esta web, directamente en SumUp.</p>
+          <Link href="/">Volver a Inicio</Link>
         </div>
       </section>
       <section className={`${styles.products} section`} id="productos">
         <div className="container">
           <div className="section-head">
             <div>
-              <p className="kicker">089 Selection</p>
-              <h2 className="display">Lo que usamos.<br />Lo que recomendamos.</h2>
+              <p className="kicker">Catalogo 089</p>
+              <h2 className="display">Producto real.<br />Compra en 089Wear.</h2>
             </div>
-            <p className="lead">Colecciones editoriales preparadas para sustituir marcas, precios y ofertas cuando el catálogo real quede cerrado.</p>
+            <p className="lead">Cards sencillas con foto, nombre, precio y disponibilidad actual. Cada producto abre su ficha real en 089Wear.</p>
           </div>
           <Suspense fallback={<p className={styles.loading}>Cargando productos 089.</p>}>
             <ProductExplorer />
