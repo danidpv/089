@@ -46,5 +46,9 @@ export function OpenStatus() {
     };
   }, []);
 
-  return <span className={`${styles.status} ${status.open ? styles.open : ""}`}>{status.label}</span>;
+  return (
+    <span className={`${styles.status} ${status.open ? styles.open : ""}`} data-testid="open-status">
+      {status.label}
+    </span>
+  );
 }

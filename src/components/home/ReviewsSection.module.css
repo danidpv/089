@@ -11,8 +11,10 @@
   width: min(44vw, 520px);
   height: min(44vw, 520px);
   content: "";
-  background: url("/images/branding/logo-089-transparent.webp") center / contain no-repeat;
-  opacity: 0.08;
+  background: var(--color-cream);
+  -webkit-mask: url("/images/branding/logo-089.svg") center / contain no-repeat;
+  mask: url("/images/branding/logo-089.svg") center / contain no-repeat;
+  opacity: 0.045;
 }
 
 .score {

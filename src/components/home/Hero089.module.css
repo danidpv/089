@@ -35,13 +35,14 @@
   position: absolute;
   right: 0;
   bottom: 4vh;
-  color: rgba(244, 238, 229, 0.9);
-  font-family: var(--font-display);
-  font-size: clamp(9rem, 24vw, 24rem);
-  font-weight: 900;
-  line-height: 0.8;
-  letter-spacing: 0;
-  text-shadow: 0 30px 90px rgba(0, 0, 0, 0.58);
+  display: block;
+  width: clamp(190px, 26vw, 390px);
+  aspect-ratio: 537.8956 / 585.269;
+  color: rgba(244, 238, 229, 0.24);
+  background: currentColor;
+  -webkit-mask: url("/images/branding/logo-089.svg") center / contain no-repeat;
+  mask: url("/images/branding/logo-089.svg") center / contain no-repeat;
+  filter: drop-shadow(0 30px 90px rgba(0, 0, 0, 0.58));
 }
 
 .chip,
@@ -95,15 +96,15 @@
   z-index: 2;
   display: grid;
   gap: 18px;
-  width: min(650px, 92vw);
+  width: min(900px, 92vw);
 }
 
 .copy h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(3.4rem, 10vw, 8.6rem);
+  font-size: clamp(2.55rem, 5.9vw, 5.2rem);
   font-weight: 900;
-  line-height: 0.86;
+  line-height: 0.9;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -140,7 +141,8 @@
   .number {
     right: -4vw;
     bottom: 12vh;
-    font-size: clamp(8rem, 39vw, 13rem);
+    width: clamp(170px, 48vw, 280px);
+    color: rgba(244, 238, 229, 0.18);
   }
 
   .chip {
@@ -149,13 +151,16 @@
   }
 
   .card {
-    right: 0;
-    bottom: 0;
-    min-width: 0;
+    display: none;
   }
 
   .copy {
     gap: 14px;
+  }
+
+  .copy h1 {
+    font-size: clamp(1.75rem, 7.9vw, 1.85rem);
+    line-height: 1;
   }
 
   .scrollCue {

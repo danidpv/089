@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
+import { Manrope, Syne } from "next/font/google";
 import Script from "next/script";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { hairSalonJsonLd } from "@/lib/structured-data";
 import "./globals.css";
 
-const inter = Inter({
+const manrope = Manrope({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-manrope",
   display: "swap"
 });
 
-const oswald = Oswald({
+const syne = Syne({
   subsets: ["latin"],
-  variable: "--font-oswald",
+  variable: "--font-syne",
   display: "swap"
 });
 
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     images: [{ url: "/images/home/hero.jpg", width: 680, height: 454 }]
   },
   icons: {
-    icon: "/images/branding/logo-089-transparent.png"
+    icon: "/images/branding/logo-089.svg"
   }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${oswald.variable}`}>
+    <html lang="es" className={`${manrope.variable} ${syne.variable}`}>
       <body>
         <Script
           id="localbusiness-jsonld"

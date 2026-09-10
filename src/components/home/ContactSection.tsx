@@ -4,6 +4,17 @@ import { OpenStatus } from "@/components/common/OpenStatus";
 import { siteConfig, whatsappUrl } from "@/data/site-config";
 import styles from "./ContactSection.module.css";
 
+const compactSchedule = [
+  { label: "Lunes - Viernes", slots: siteConfig.openingHours[0].slots },
+  { label: "Sábado", slots: siteConfig.openingHours[5].slots },
+  { label: "Domingo", slots: siteConfig.openingHours[6].slots }
+];
+
+function formatSlots(slots: typeof siteConfig.openingHours[number]["slots"]) {
+  if (slots.length === 0) return "Cerrado";
+  return slots.map((slot) => `${slot.opens}-${slot.closes}`).join(" / ");
+}
+
 export function ContactSection() {
   return (
     <section className={styles.visit} id="visitanos">
@@ -25,6 +36,17 @@ export function ContactSection() {
             <Phone aria-hidden="true" size={18} />
             {siteConfig.phoneDisplay}
           </a>
+          <div className={styles.schedule} aria-label="Horario de apertura">
+            <h3>Horario</h3>
+            <dl>
+              {compactSchedule.map((item) => (
+                <div key={item.label}>
+                  <dt>{item.label}</dt>
+                  <dd>{formatSlots(item.slots)}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
           <div className={styles.actions}>
             <BooksyButton label="Reservar en Booksy" />
             <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">

@@ -57,7 +57,7 @@ export function Hero089() {
       />
       <div className={styles.overlay} />
       <div className={styles.stage} ref={stageRef}>
-        <div className={styles.number}>089</div>
+        <span className={styles.number} aria-hidden="true" />
         <p className={styles.chip}>{siteConfig.locationLine}</p>
         <div className={styles.card}>
           <p>{siteConfig.addressShort}</p>
@@ -67,7 +67,7 @@ export function Hero089() {
       <div className={styles.copy}>
         <p className="kicker">Montequinto · Dos Hermanas · Sevilla</p>
         <h1>{siteConfig.name}</h1>
-        <p>{siteConfig.addressShort}</p>
+        <p data-testid="hero-address">{siteConfig.addressShort}</p>
         <BooksyButton label="Reservar" />
       </div>
       <span className={styles.scrollCue}>Scroll</span>

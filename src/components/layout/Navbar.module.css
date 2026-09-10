@@ -26,18 +26,22 @@
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
+  gap: 12px;
   min-width: 0;
 }
 
-.brand b {
-  font-family: var(--font-display);
-  font-size: 1.86rem;
-  font-weight: 900;
-  line-height: 1;
+.logoMark {
+  display: block;
+  flex: 0 0 auto;
+  width: 34px;
+  aspect-ratio: 537.8956 / 585.269;
+  color: var(--color-cream);
+  background: currentColor;
+  -webkit-mask: url("/images/branding/logo-089.svg") center / contain no-repeat;
+  mask: url("/images/branding/logo-089.svg") center / contain no-repeat;
 }
 
-.brand span {
+.brandText {
   max-width: 112px;
   color: rgba(244, 238, 229, 0.72);
   font-size: 0.54rem;
@@ -161,9 +165,13 @@
     padding-inline: 16px;
   }
 
-  .brand span {
+  .brandText {
     max-width: 86px;
     font-size: 0.47rem;
+  }
+
+  .logoMark {
+    width: 29px;
   }
 
   .navBooksy {

@@ -5,9 +5,10 @@
   align-items: center;
   gap: 8px;
   padding: 0 12px;
-  border: 1px solid rgba(244, 238, 229, 0.22);
+  border: 1px solid rgba(138, 57, 42, 0.34);
   border-radius: 999px;
-  color: rgba(244, 238, 229, 0.78);
+  color: #5c211b;
+  background: rgba(138, 57, 42, 0.12);
   font-size: 0.68rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -23,6 +24,12 @@
 }
 
 .open::before {
-  background: var(--color-accent);
-  box-shadow: 0 0 16px rgba(158, 222, 232, 0.72);
+  background: var(--color-green);
+  box-shadow: 0 0 16px rgba(14, 90, 80, 0.35);
+}
+
+.open {
+  border-color: rgba(14, 90, 80, 0.38);
+  color: var(--color-green);
+  background: rgba(14, 90, 80, 0.13);
 }

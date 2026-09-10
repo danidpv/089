@@ -18,9 +18,9 @@
 .visit h2 {
   margin: 0 0 22px;
   font-family: var(--font-display);
-  font-size: clamp(3.6rem, 8vw, 8rem);
+  font-size: clamp(3rem, 5.8vw, 6rem);
   font-weight: 900;
-  line-height: 0.84;
+  line-height: 0.9;
   text-transform: uppercase;
 }
 
@@ -54,6 +54,51 @@
   align-items: center;
   gap: 10px;
   font-size: 1.45rem;
+  font-weight: 900;
+}
+
+.schedule {
+  display: grid;
+  gap: 12px;
+  padding-block: 6px 2px;
+}
+
+.schedule h3 {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.schedule dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.schedule div {
+  display: grid;
+  grid-template-columns: minmax(118px, 0.72fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: baseline;
+}
+
+.schedule dt,
+.schedule dd {
+  margin: 0;
+}
+
+.schedule dt {
+  color: rgba(15, 21, 18, 0.68);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.schedule dd {
+  font-size: 0.95rem;
   font-weight: 900;
 }
 
@@ -105,5 +150,12 @@
 @media (max-width: 960px) {
   .inner {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .schedule div {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 }

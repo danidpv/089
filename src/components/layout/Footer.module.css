@@ -7,35 +7,45 @@
 
 .top {
   display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 32px;
-  align-items: center;
+  grid-template-columns: minmax(240px, 1fr) minmax(320px, 0.9fr) auto;
+  gap: clamp(26px, 4vw, 58px);
+  align-items: start;
   width: min(100%, var(--container-width));
   margin-inline: auto;
 }
 
-.brand {
+.brandBlock {
   display: flex;
-  gap: 14px;
-  align-items: center;
+  gap: 16px;
+  align-items: flex-start;
 }
 
-.brand img {
-  width: 54px;
-  height: auto;
-  opacity: 0.86;
+.logoLink {
+  display: inline-flex;
+  flex: 0 0 auto;
 }
 
-.brand strong,
-.brand span {
+.logoMark {
+  display: block;
+  width: 50px;
+  aspect-ratio: 537.8956 / 585.269;
+  color: var(--color-cream);
+  background: currentColor;
+  -webkit-mask: url("/images/branding/logo-089.svg") center / contain no-repeat;
+  mask: url("/images/branding/logo-089.svg") center / contain no-repeat;
+  opacity: 0.9;
+}
+
+.brandBlock strong,
+.brandBlock span {
   display: block;
 }
 
-.brand strong {
+.brandBlock strong {
   font-size: 0.9rem;
 }
 
-.brand span,
+.brandBlock span,
 .bottom {
   color: rgba(244, 238, 229, 0.58);
   font-size: 0.68rem;
@@ -44,19 +54,21 @@
 }
 
 .links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+  gap: 12px 18px;
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
-.actions {
+.actionBlock {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 14px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .bottom {
@@ -70,19 +82,35 @@
 }
 
 @media (max-width: 900px) {
-  .top,
-  .bottom {
+  .top {
     grid-template-columns: 1fr;
+  }
+
+  .links {
+    width: min(100%, 420px);
+  }
+
+  .actionBlock {
+    justify-content: flex-start;
+  }
+
+  .bottom {
     flex-direction: column;
     align-items: flex-start;
   }
+}
 
-  .top {
-    display: flex;
-    align-items: flex-start;
+@media (max-width: 520px) {
+  .brandBlock {
+    align-items: center;
   }
 
-  .actions {
-    flex-wrap: wrap;
+  .logoMark {
+    width: 44px;
+  }
+
+  .links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 }

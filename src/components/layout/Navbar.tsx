@@ -59,8 +59,8 @@ export function Navbar() {
   return (
     <header className={`${styles.navbar} ${scrolled || open ? styles.scrolled : ""}`}>
       <Link className={styles.brand} href="/" onClick={handleHomeClick}>
-        <b>089</b>
-        <span>Barbería Profesional</span>
+        <span className={styles.logoMark} role="img" aria-label="089 Barbería Profesional" />
+        <span className={styles.brandText} aria-hidden="true">Barbería Profesional</span>
       </Link>
       <SocialLinks compact />
       <nav className={styles.links} aria-label="Navegación principal">
