@@ -16,7 +16,7 @@
   --navbar-height: 78px;
   --radius: 24px;
   --shadow: 0 20px 70px rgba(0, 0, 0, 0.28);
-  --font-display: var(--font-syne), Impact, "Arial Black", sans-serif;
+  --font-display: var(--font-archivo-narrow), "Arial Narrow", Impact, sans-serif;
   --font-body: var(--font-manrope), Arial, sans-serif;
   --transition-fast: 160ms ease;
   --transition-normal: 280ms ease;
@@ -84,9 +84,9 @@ main {
 .display {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.85rem, 7vw, 7rem);
-  font-weight: 900;
-  line-height: 0.9;
+  font-size: clamp(2.65rem, 5.8vw, 5.7rem);
+  font-weight: 700;
+  line-height: 0.92;
   letter-spacing: 0;
   text-transform: uppercase;
 }

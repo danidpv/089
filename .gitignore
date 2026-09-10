@@ -9,3 +9,4 @@ dist/
 .env*
 !.env.example
 tmp/
+_incoming_assets/

@@ -1,0 +1,216 @@
+.hero {
+  position: relative;
+  min-height: 82svh;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  padding: calc(var(--navbar-height) + 72px) 5vw 72px;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.03);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(7, 16, 14, 0.92), rgba(7, 16, 14, 0.34) 56%, rgba(7, 16, 14, 0.76)),
+    linear-gradient(0deg, rgba(7, 16, 14, 0.94), transparent 42%);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 18px;
+  width: min(760px, 100%);
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 6.4rem);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero p {
+  margin: 0;
+  color: rgba(244, 238, 229, 0.8);
+  line-height: 1.72;
+}
+
+.hero a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-accent);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.gallerySection {
+  background: var(--color-deep);
+}
+
+.storySection {
+  background:
+    linear-gradient(180deg, rgba(13, 27, 24, 0.96), rgba(7, 16, 14, 0.98)),
+    url("/images/exterior/facade-sign-night.webp") center / cover fixed;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: minmax(340px, 1.15fr) repeat(3, minmax(0, 0.74fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.copy {
+  align-self: center;
+  display: grid;
+  gap: 18px;
+  padding-right: clamp(0px, 3vw, 38px);
+}
+
+.copy h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.55rem, 4.35vw, 4.55rem);
+  font-weight: 700;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+.copy p {
+  margin: 0;
+  color: rgba(244, 238, 229, 0.78);
+  line-height: 1.72;
+}
+
+.storyImage {
+  position: relative;
+  min-height: 460px;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--color-deep-2);
+}
+
+.storyImage img {
+  object-fit: cover;
+}
+
+.storyImage::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 52%, rgba(7, 16, 14, 0.82));
+}
+
+.storyImage figcaption {
+  position: absolute;
+  z-index: 1;
+  left: 18px;
+  bottom: 18px;
+  color: var(--color-cream);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: clamp(52px, 7vw, 78px) 5vw;
+  color: var(--color-ink);
+  background: var(--color-cream);
+}
+
+.cta h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 0.92;
+  text-transform: uppercase;
+}
+
+.cta p {
+  margin: 8px 0 0;
+  color: rgba(15, 21, 18, 0.72);
+}
+
+.ctaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.ctaActions a:not([data-testid]) {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  gap: 8px;
+  padding: 0 17px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  color: var(--color-ink);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1020px) {
+  .storyGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .copy {
+    grid-column: 1 / -1;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 74svh;
+    padding-inline: 20px;
+  }
+
+  .storySection {
+    background-attachment: scroll;
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .storyImage {
+    min-height: 360px;
+  }
+
+  .cta {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-inline: 20px;
+  }
+
+  .ctaActions {
+    justify-content: flex-start;
+  }
+}

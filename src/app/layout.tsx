@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Syne } from "next/font/google";
+import { Archivo_Narrow, Manrope } from "next/font/google";
 import Script from "next/script";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
@@ -12,9 +12,10 @@ const manrope = Manrope({
   display: "swap"
 });
 
-const syne = Syne({
+const archivoNarrow = Archivo_Narrow({
   subsets: ["latin"],
-  variable: "--font-syne",
+  variable: "--font-archivo-narrow",
+  weight: ["400", "500", "600", "700"],
   display: "swap"
 });
 
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es" className={`${manrope.variable} ${syne.variable}`}>
+    <html lang="es" className={`${manrope.variable} ${archivoNarrow.variable}`} data-scroll-behavior="smooth">
       <body>
         <Script
           id="localbusiness-jsonld"

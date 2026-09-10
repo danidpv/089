@@ -132,7 +132,7 @@
   text-align: center;
   background:
     linear-gradient(180deg, rgba(7, 16, 14, 0.32), rgba(7, 16, 14, 0.82)),
-    url("/images/branding/window-logo.jpg") center / cover;
+    url("/images/exterior/door-logo-gold.webp") center / cover;
 }
 
 .map span {

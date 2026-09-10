@@ -23,8 +23,8 @@ const cards = [
     number: "03",
     eyebrow: "Montequinto",
     title: "La barbería.",
-    href: "/#barberia",
-    image: "/images/home/hero.jpg",
+    href: "/barberia",
+    image: "/images/barberia/interior-main-frontal.webp",
     alt: "Interior de 089 Barbería Profesional"
   }
 ];

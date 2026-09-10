@@ -36,7 +36,7 @@ export const siteConfig = {
     { label: "Inicio", href: "/" },
     { label: "Carta", href: "/carta" },
     { label: "Productos", href: "/productos" },
-    { label: "La barbería", href: "/#barberia" },
+    { label: "La barbería", href: "/barberia" },
     { label: "Contacto", href: "/#visitanos" },
     { label: "Reseñas", href: "/#opiniones" }
   ]

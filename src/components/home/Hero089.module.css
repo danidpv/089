@@ -102,9 +102,9 @@
 .copy h1 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.55rem, 5.9vw, 5.2rem);
-  font-weight: 900;
-  line-height: 0.9;
+  font-size: clamp(2.45rem, 5.2vw, 4.8rem);
+  font-weight: 700;
+  line-height: 0.94;
   letter-spacing: 0;
   text-transform: uppercase;
 }
@@ -159,7 +159,7 @@
   }
 
   .copy h1 {
-    font-size: clamp(1.75rem, 7.9vw, 1.85rem);
+    font-size: clamp(1.72rem, 7.4vw, 1.82rem);
     line-height: 1;
   }
 
