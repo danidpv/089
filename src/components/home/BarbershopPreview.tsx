@@ -31,11 +31,14 @@ export function BarbershopPreview() {
               fill
               sizes="(max-width: 860px) 100vw, 42vw"
             />
-            <span>{homeBarberiaImage.label}</span>
-            <strong>
+            <div className={styles.photoCopy}>
+              <span>{homeBarberiaImage.label}</span>
+              <strong>Descubre<br />la barberia</strong>
+            </div>
+            <span className={styles.photoCta}>
               Ver la barberia
               <ArrowRight aria-hidden="true" size={18} />
-            </strong>
+            </span>
           </Link>
         </div>
       </div>

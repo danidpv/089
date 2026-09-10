@@ -1,6 +1,6 @@
 .previewGrid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.72fr);
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
   gap: 18px;
   align-items: stretch;
 }
@@ -8,7 +8,8 @@
 .videoPanel,
 .photoLink {
   position: relative;
-  min-height: clamp(420px, 56vw, 680px);
+  height: clamp(380px, 34vw, 480px);
+  min-height: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -40,14 +41,14 @@
 }
 
 .videoLabel,
-.photoLink span,
-.photoLink strong {
+.photoCopy,
+.photoCta {
   position: absolute;
   z-index: 1;
 }
 
 .videoLabel,
-.photoLink span {
+.photoCopy {
   left: 18px;
   bottom: 18px;
   display: inline-flex;
@@ -60,7 +61,19 @@
   text-transform: uppercase;
 }
 
-.photoLink strong {
+.photoCopy {
+  display: grid;
+  gap: 8px;
+}
+
+.photoCopy strong {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.3vw, 3.2rem);
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+
+.photoCta {
   right: 18px;
   bottom: 18px;
   display: inline-flex;
@@ -80,7 +93,7 @@
 
   .videoPanel,
   .photoLink {
-    min-height: 380px;
+    height: clamp(300px, 82vw, 420px);
   }
 }
 
@@ -90,7 +103,7 @@
     min-height: 320px;
   }
 
-  .photoLink strong {
+  .photoCta {
     left: 18px;
     right: auto;
     bottom: 48px;

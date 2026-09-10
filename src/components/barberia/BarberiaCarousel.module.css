@@ -29,21 +29,33 @@
   height: 44px;
 }
 
+.controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
 .rail {
   display: grid;
-  grid-auto-columns: minmax(320px, 74vw);
+  grid-auto-columns: clamp(260px, 26vw, 340px);
   grid-auto-flow: column;
+  width: 100%;
+  min-width: 0;
   gap: 18px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  padding-bottom: 8px;
+  padding-bottom: 2px;
   scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.rail::-webkit-scrollbar {
+  display: none;
 }
 
 .slide {
   position: relative;
-  height: clamp(420px, 64vw, 720px);
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -151,11 +163,11 @@
 
 @media (max-width: 760px) {
   .rail {
-    grid-auto-columns: 86vw;
+    grid-auto-columns: 84vw;
   }
 
   .slide {
-    height: 420px;
+    aspect-ratio: 4 / 5;
   }
 
   .modal {

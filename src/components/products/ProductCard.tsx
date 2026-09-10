@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { productCategoryLabels } from "@/data/products";
 import type { Product } from "@/data/types";
 import styles from "./ProductCard.module.css";
 
@@ -12,14 +11,9 @@ export function ProductCard({ product }: { product: Product }) {
         {product.badge ? <span>{product.badge}</span> : null}
       </div>
       <div className={styles.body}>
+        <span className={styles.category}>{productCategoryLabels[product.category]}</span>
         <h4>{product.name}</h4>
         <p>{product.summary}</p>
-        <div>
-          <span>{product.status}</span>
-          <Link href={`/productos?categoria=${product.category}`}>
-            Ver producto <ExternalLink aria-hidden="true" size={13} />
-          </Link>
-        </div>
       </div>
     </article>
   );

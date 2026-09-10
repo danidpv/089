@@ -17,9 +17,21 @@ export function BarberiaCarousel({ images }: BarberiaCarouselProps) {
   const closeRef = useRef<HTMLButtonElement>(null);
 
   const showImage = (index: number) => {
-    const nextIndex = (index + images.length) % images.length;
+    const nextIndex = Math.max(0, Math.min(index, images.length - 1));
     setActiveIndex(nextIndex);
-    railRef.current?.children[nextIndex]?.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+    railRef.current?.children[nextIndex]?.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+  };
+
+  const updateActiveIndex = () => {
+    const rail = railRef.current;
+    if (!rail) return;
+    const slides = Array.from(rail.children) as HTMLElement[];
+    const nextIndex = slides.reduce((closestIndex, slide, index) => {
+      const closestDistance = Math.abs(slides[closestIndex].offsetLeft - rail.scrollLeft);
+      const distance = Math.abs(slide.offsetLeft - rail.scrollLeft);
+      return distance < closestDistance ? index : closestIndex;
+    }, 0);
+    setActiveIndex(nextIndex);
   };
 
   useEffect(() => {
@@ -41,10 +53,10 @@ export function BarberiaCarousel({ images }: BarberiaCarouselProps) {
   return (
     <div className={styles.carousel} aria-label="Galeria de la barberia">
       <div className={styles.controls}>
-        <button type="button" aria-label="Foto anterior" onClick={() => showImage(activeIndex - 1)}>
+        <button type="button" aria-label="Fotografía anterior" disabled={activeIndex === 0} onClick={() => showImage(activeIndex - 1)}>
           <ChevronLeft aria-hidden="true" size={20} />
         </button>
-        <button type="button" aria-label="Foto siguiente" onClick={() => showImage(activeIndex + 1)}>
+        <button type="button" aria-label="Fotografía siguiente" disabled={activeIndex === images.length - 1} onClick={() => showImage(activeIndex + 1)}>
           <ChevronRight aria-hidden="true" size={20} />
         </button>
       </div>
@@ -53,6 +65,7 @@ export function BarberiaCarousel({ images }: BarberiaCarouselProps) {
         className={styles.rail}
         ref={railRef}
         tabIndex={0}
+        onScroll={updateActiveIndex}
         onKeyDown={(event) => {
           if (event.key === "ArrowLeft") showImage(activeIndex - 1);
           if (event.key === "ArrowRight") showImage(activeIndex + 1);
