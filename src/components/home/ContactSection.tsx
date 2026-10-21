@@ -1,7 +1,7 @@
-import { MapPin, Phone, Route, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Route } from "lucide-react";
 import { BooksyButton } from "@/components/common/BooksyButton";
 import { OpenStatus } from "@/components/common/OpenStatus";
-import { siteConfig, whatsappUrl } from "@/data/site-config";
+import { siteConfig } from "@/data/site-config";
 import styles from "./ContactSection.module.css";
 
 const compactSchedule = [
@@ -52,10 +52,6 @@ export function ContactSection() {
             <a href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">
               <Route aria-hidden="true" size={16} />
               Cómo llegar
-            </a>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
-              <MessageCircle aria-hidden="true" size={16} />
-              WhatsApp
             </a>
             <a href={`tel:${siteConfig.phoneInternational}`}>
               <Phone aria-hidden="true" size={16} />

@@ -24,7 +24,7 @@ export const barberiaGallery: BarberiaImage[] = [
   homeBarberiaImage,
   {
     src: "/images/barberia/interior-longitudinal.webp",
-    alt: "Vista longitudinal del local 089 con puestos de barberia",
+    alt: "Vista longitudinal del local 089 con puestos de barbería",
     label: "Puestos",
     width: 1080,
     height: 740
@@ -45,15 +45,15 @@ export const barberiaGallery: BarberiaImage[] = [
   },
   {
     src: "/images/exterior/facade-sign-day.webp",
-    alt: "Fachada de 089 Barberia Profesional en Montequinto",
+    alt: "Fachada de 089 Barbería Profesional en Montequinto",
     label: "Fachada",
     width: 1080,
     height: 735
   },
   {
     src: "/images/exterior/facade-sign-night.webp",
-    alt: "Rotulo exterior iluminado de 089",
-    label: "Rotulo",
+    alt: "Rótulo exterior iluminado de 089",
+    label: "Rótulo",
     width: 1080,
     height: 750
   },
@@ -66,7 +66,7 @@ export const barberiaGallery: BarberiaImage[] = [
   },
   {
     src: "/images/people/client-finished-look.webp",
-    alt: "Cliente con acabado de barberia terminado",
+    alt: "Cliente con acabado de barbería terminado",
     label: "Acabado",
     width: 900,
     height: 1200

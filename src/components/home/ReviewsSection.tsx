@@ -1,17 +1,18 @@
-import { Star } from "lucide-react";
+import { ExternalLink, Star } from "lucide-react";
 import { BooksyButton } from "@/components/common/BooksyButton";
 import { siteConfig } from "@/data/site-config";
 import { reviewSummary, reviews } from "@/data/reviews";
+import { ReviewsCarousel } from "./ReviewsCarousel";
 import styles from "./ReviewsSection.module.css";
 
 export function ReviewsSection() {
   return (
     <section className={`${styles.reviews} section`} id="opiniones">
-      <div className="container">
-        <div className="section-head">
+      <div className={`container ${styles.inner}`}>
+        <div className={`section-head ${styles.header}`}>
           <div>
             <p className="kicker">Reseñas</p>
-            <h2 className="display">Así vive<br />089 la gente.</h2>
+            <h2 className="display">Lo que dicen<br />de 089.</h2>
           </div>
           <a className={styles.score} href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer">
             <strong>{reviewSummary.rating}</strong>
@@ -19,21 +20,18 @@ export function ReviewsSection() {
               {Array.from({ length: 5 }, (_, index) => <Star key={index} size={15} fill="currentColor" />)}
             </span>
             <small>{reviewSummary.count} · {reviewSummary.source}</small>
+            <small>Verificado el {reviewSummary.verifiedAt}</small>
           </a>
         </div>
-        <div className={styles.grid}>
-          {reviews.map((review) => (
-            <article className={styles.review} key={review.id}>
-              <q>{review.quote}</q>
-              <div>
-                <span>{review.source}</span>
-                <span>★★★★★</span>
-              </div>
-            </article>
-          ))}
-          <div className={styles.action}>
-            <BooksyButton label="Ver en Booksy" />
-          </div>
+        <ReviewsCarousel reviews={reviews} />
+        <div className={styles.actions}>
+          <BooksyButton label="Ver reseñas en Booksy" />
+          {siteConfig.googleReviewUrl ? (
+            <a href={siteConfig.googleReviewUrl} target="_blank" rel="noopener noreferrer">
+              Déjanos tu reseña en Google
+              <ExternalLink aria-hidden="true" size={14} />
+            </a>
+          ) : null}
         </div>
       </div>
     </section>

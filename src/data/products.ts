@@ -536,5 +536,5 @@ export const products: Product[] = [
 
 export function normalizeCategory(value: string | null): ProductCategory | "todo" {
   if (!value || value === "todo") return "todo";
-  return categoryAliases[value] ?? "todo";
+  return Object.hasOwn(categoryAliases, value) ? categoryAliases[value] : "todo";
 }

@@ -6,7 +6,7 @@ export default function NotFound() {
     <main className={styles.notFound}>
       <p className="kicker">089 Barbería Profesional</p>
       <h1 className="display">404.</h1>
-      <p>Esta página no está en la carta.</p>
+      <p>La página que buscas no está disponible.</p>
       <Link href="/">Volver a inicio</Link>
     </main>
   );

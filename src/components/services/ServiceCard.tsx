@@ -2,7 +2,6 @@ import { ExternalLink } from "lucide-react";
 import { siteConfig } from "@/data/site-config";
 import type { Service } from "@/data/types";
 import { formatDuration, formatPrice } from "@/lib/format";
-import { ProductRecommendation } from "./ProductRecommendation";
 import styles from "./ServiceCard.module.css";
 
 export function ServiceCard({ service }: { service: Service }) {
@@ -21,7 +20,6 @@ export function ServiceCard({ service }: { service: Service }) {
           </em>
         </span>
       </a>
-      <ProductRecommendation categories={service.recommendedProductCategories} />
     </article>
   );
 }

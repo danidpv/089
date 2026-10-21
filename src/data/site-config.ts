@@ -11,6 +11,7 @@ export const openingHours: OpeningDay[] = [
 ];
 
 export const siteConfig = {
+  siteUrl: "https://089barberia-profesional.vercel.app",
   name: "089 Barbería Profesional",
   shortName: "089",
   locationLine: "Montequinto · Dos Hermanas",
@@ -28,18 +29,17 @@ export const siteConfig = {
   email: null as string | null,
   instagramUrl: null as string | null,
   tiktokUrl: null as string | null,
+  googleReviewUrl: null as string | null,
   bookingUrl: "https://booksy.com/es-es/14522_089-barberia-profesional_barberia_29946_dos-hermanas",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=Av.%20Europa%208%20local%204A%2041089%20Montequinto%20Dos%20Hermanas%20Sevilla",
   timezone: "Europe/Madrid",
   openingHours,
   navItems: [
     { label: "Inicio", href: "/" },
-    { label: "Carta", href: "/carta" },
-    { label: "Productos", href: "/productos" },
+    { label: "Servicios", href: "/servicios" },
+    { label: "Marcas", href: "/marcas" },
     { label: "La barbería", href: "/barberia" },
     { label: "Contacto", href: "/#visitanos" },
     { label: "Reseñas", href: "/#opiniones" }
   ]
 };
-
-export const whatsappUrl = `https://wa.me/${siteConfig.phoneInternational.replace("+", "")}`;

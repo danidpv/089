@@ -1,11 +1,15 @@
 .carousel {
   position: relative;
   display: grid;
+  width: 100%;
+  min-width: 0;
   gap: 18px;
 }
 
 .controls {
   display: flex;
+  width: 100%;
+  min-width: 0;
   justify-content: flex-end;
   gap: 10px;
 }
@@ -104,11 +108,16 @@
 
 .dots {
   display: flex;
+  width: 100%;
+  min-width: 0;
   justify-content: center;
   gap: 8px;
 }
 
 .dots button {
+  flex: 1 1 24px;
+  min-width: 0;
+  max-width: 34px;
   width: 34px;
   height: 3px;
   border: 0;
@@ -124,19 +133,40 @@
   position: fixed;
   inset: 0;
   z-index: 10000;
+  display: none;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: var(--color-cream);
+  background: rgba(4, 7, 6, 0.93);
+  backdrop-filter: blur(16px);
+}
+
+.modal[open] {
+  display: grid;
+}
+
+.modal::backdrop {
+  background: rgba(4, 7, 6, 0.78);
+}
+
+.modalContent {
   display: grid;
   grid-template-columns: 64px minmax(0, 1fr) 64px;
   align-items: center;
   gap: 12px;
   padding: 24px;
-  background: rgba(4, 7, 6, 0.9);
-  backdrop-filter: blur(16px);
 }
 
 .frame {
   display: grid;
   place-items: center;
   min-width: 0;
+  margin: 0;
 }
 
 .frame img {
@@ -145,6 +175,15 @@
   height: auto;
   max-height: 86svh;
   object-fit: contain;
+}
+
+.frame figcaption {
+  margin-top: 12px;
+  color: rgba(244, 238, 229, 0.68);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .close {
@@ -170,7 +209,7 @@
     aspect-ratio: 4 / 5;
   }
 
-  .modal {
+  .modalContent {
     grid-template-columns: 1fr;
     padding: 18px;
   }

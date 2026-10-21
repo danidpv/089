@@ -35,9 +35,20 @@ export function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 1061px)");
+    const closeMobileMenu = (event: MediaQueryListEvent | MediaQueryList) => {
+      if (event.matches) setOpen(false);
+    };
+
+    closeMobileMenu(desktopQuery);
+    desktopQuery.addEventListener("change", closeMobileMenu);
+    return () => desktopQuery.removeEventListener("change", closeMobileMenu);
+  }, []);
+
   const isActive = (href: string) => {
     if (href === "/") return pathname === "/";
-    return pathname === href || (href.startsWith("/#") && pathname === "/");
+    return pathname === href;
   };
 
   const handleHomeClick = (event: MouseEvent<HTMLAnchorElement>) => {
@@ -86,7 +97,7 @@ export function Navbar() {
       >
         {open ? <X size={19} /> : <Menu size={19} />}
       </button>
-      <div className={`${styles.mobileMenu} ${open ? styles.open : ""}`} id={menuId}>
+      <nav className={`${styles.mobileMenu} ${open ? styles.open : ""}`} id={menuId} aria-label="Navegación móvil">
         {siteConfig.navItems.map((item) => (
           <Link key={item.href} href={item.href} onClick={(event) => handleNavClick(item.href, event)}>
             {item.label}
@@ -96,7 +107,7 @@ export function Navbar() {
           <SocialLinks />
         </div>
         <BooksyButton label="Reservar en Booksy" />
-      </div>
+      </nav>
     </header>
   );
 }

@@ -1,5 +1,7 @@
 # 089Wear catalog sync
 
+> **Archivo histórico.** Este catálogo dejó de exponerse en la web de 089 Barbería. La captura se conserva únicamente como referencia para una posible integración futura y no se sincroniza. Los precios y las existencias indicados a continuación corresponden al 10 de septiembre de 2026 y no deben considerarse actuales.
+
 Fecha/hora de consulta: 2026-09-10T11:53:31.167Z
 URL principal: https://www.089wear.com/productos
 Metodo: 089Wear vivo mediante proxy textual r.jina.ai porque el acceso local directo devuelve FortiGuard 403. No se han usado snippets historicos.

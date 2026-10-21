@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
+import { siteConfig } from "@/data/site-config";
 
-const routes = ["/", "/carta", "/productos", "/barberia"];
+const routes = ["/", "/servicios", "/marcas", "/barberia"];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
-    url: `https://089barberia-profesional.vercel.app${route}`,
-    lastModified: new Date("2026-09-09")
+    url: `${siteConfig.siteUrl}${route}`,
+    lastModified: new Date("2026-10-20")
   }));
 }

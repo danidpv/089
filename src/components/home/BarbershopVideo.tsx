@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import styles from "./BarbershopVideo.module.css";
 
 type BarbershopVideoProps = {
   src: string;
@@ -10,7 +11,9 @@ type BarbershopVideoProps = {
 };
 
 export function BarbershopVideo({ src, poster, className }: BarbershopVideoProps) {
+  const frameRef = useRef<HTMLDivElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [shouldLoad, setShouldLoad] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -20,20 +23,39 @@ export function BarbershopVideo({ src, poster, className }: BarbershopVideoProps
     return () => mediaQuery.removeEventListener("change", update);
   }, []);
 
-  if (reduceMotion) {
-    return <Image className={className} src={poster} alt="" aria-hidden="true" width={720} height={1280} />;
-  }
+  useEffect(() => {
+    const frame = frameRef.current;
+    if (!frame || reduceMotion) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "180px" }
+    );
+
+    observer.observe(frame);
+    return () => observer.disconnect();
+  }, [reduceMotion]);
 
   return (
-    <video
-      className={className}
-      src={src}
-      poster={poster}
-      autoPlay
-      muted
-      loop
-      playsInline
-      aria-label="Recorrido por el interior de 089 Barberia Profesional"
-    />
+    <div className={`${styles.frame} ${className ?? ""}`} ref={frameRef}>
+      <Image className={styles.media} src={poster} alt="" aria-hidden="true" fill sizes="(max-width: 860px) 100vw, 56vw" />
+      {shouldLoad && !reduceMotion ? (
+        <video
+          className={styles.media}
+          src={src}
+          poster={poster}
+          autoPlay
+          muted
+          playsInline
+          preload="none"
+          aria-hidden="true"
+        />
+      ) : null}
+    </div>
   );
 }

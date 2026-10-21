@@ -54,5 +54,7 @@ export type ProductCollection = {
 export type Review = {
   id: string;
   quote: string;
-  source: string;
+  author: string;
+  service: string;
+  source: "Booksy";
 };

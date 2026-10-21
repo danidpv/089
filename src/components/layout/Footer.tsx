@@ -19,8 +19,8 @@ export function Footer() {
         </div>
         <nav className={styles.links} aria-label="Navegación de pie">
           <Link href="/">Inicio</Link>
-          <Link href="/carta">Servicios</Link>
-          <Link href="/productos">Productos</Link>
+          <Link href="/servicios">Servicios</Link>
+          <Link href="/marcas">Marcas</Link>
           <Link href="/barberia">La barbería</Link>
           <Link href="/#visitanos">Contacto</Link>
           <Link href="/#opiniones">Reseñas</Link>

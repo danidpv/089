@@ -16,11 +16,15 @@
   background: var(--color-deep-2);
 }
 
-.video,
 .photoLink img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
 }
 
 .videoPanel::after,

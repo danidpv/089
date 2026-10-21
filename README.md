@@ -1,87 +1,67 @@
 # 089 Barbería Profesional
 
-Aplicación web de producción para 089 Barbería Profesional, construida desde los tres HTML de mockup v6.1 conservados en `docs/reference/mockups`.
+Web informativa de 089 Barbería Profesional, construida con Next.js, React y TypeScript.
 
-## Stack
+## Puesta en marcha
 
-- Next.js App Router
-- React + TypeScript
-- Server Components por defecto
-- CSS Modules + `src/app/globals.css` para tokens globales
-- `next/image` para imágenes locales
-- `next/font` para Inter y Oswald
-- Lucide React para iconos genéricos
-- Playwright para E2E mínimo
-
-## Desarrollo
+Requisitos: Node.js 20.9 o posterior y npm.
 
 ```bash
-npm install
+npm ci
 npm run dev
+```
+
+Comprobaciones disponibles:
+
+```bash
 npm run lint
 npm run typecheck
 npm run build
-npm run start
 npm run test:e2e
 ```
 
-Rutas:
+En este entorno de Windows con Node 24 y npm 11, `cmd.exe` no pudo lanzar el `postinstall` de `unrs-resolver` ni los binarios de los scripts del proyecto. El mismo proceso termina correctamente usando PowerShell como shell de scripts. Si aparece `El sistema no puede encontrar la ruta especificada`, usa:
 
-- `/`
-- `/carta`
-- `/productos`
+```bash
+npm ci --script-shell=powershell.exe
+npm run lint --script-shell=powershell.exe
+npm run typecheck --script-shell=powershell.exe
+npm run build --script-shell=powershell.exe
+node node_modules/@playwright/test/cli.js test
+```
+
+## Rutas públicas
+
+- `/`: portada, reseñas y contacto.
+- `/servicios`: carta de servicios y precios.
+- `/marcas`: marcas profesionales utilizadas en la barbería.
+- `/barberia`: espacio, equipo y galería.
+
+Las rutas antiguas `/carta` y `/productos` mantienen redirecciones permanentes a `/servicios` y `/marcas`.
 
 ## Configuración
 
-Todo lo editable de negocio vive en `src/data`:
+Los datos editables del negocio viven en `src/data`:
 
-- Booksy, teléfono, WhatsApp, dirección, horarios, redes y email: `src/data/site-config.ts`
-- Servicios y precios: `src/data/services.ts`
-- Productos, categorías y colecciones: `src/data/products.ts`
-- Reseñas provisionales: `src/data/reviews.ts`
+- Datos de contacto, Booksy, dirección, horarios y redes: `site-config.ts`.
+- Servicios y precios: `services.ts`.
+- Marcas: `brands.ts`.
+- Reseñas verificadas y resumen de Booksy: `reviews.ts`.
 
-Las URLs de Instagram, TikTok y email están como `null` hasta tener referencias definitivas. Los horarios están centralizados y deben verificarse antes de producción.
+Instagram, TikTok, correo y el enlace directo para reseñar en Google permanecen en `null` hasta disponer de URLs oficiales confirmadas. La interfaz no inventa enlaces: oculta o desactiva esas acciones mientras falten.
 
-## Assets pendientes
+## Contenido archivado
 
-Mapa esperado:
+`src/data/products.ts`, las imágenes de producto y `docs/089wear-catalog-sync.md` se conservan como una captura histórica para una futura integración. No alimentan ninguna ruta pública y sus precios o existencias no deben considerarse actuales.
 
-```text
-public/images/
-├── branding/
-│   ├── logo-089-transparent.png
-│   └── window-logo.jpg
-├── home/
-│   └── hero.jpg
-├── barberia/
-│   ├── interior-01.jpg
-│   ├── interior-02.jpg
-│   ├── interior-03.jpg
-│   └── recepcion.jpg
-└── productos/
-    ├── ceras/
-    ├── polvos/
-    ├── shampoos/
-    ├── barba/
-    ├── peines/
-    └── geles/
-```
+El vídeo actual de la portada pesa aproximadamente 6 MB y dura 47 segundos. Se carga solo cuando el bloque se aproxima a la ventana, no se reproduce en bucle y sirve como recurso provisional hasta recibir un vídeo definitivo del negocio.
 
-Las imágenes actuales se extrajeron de los HTML de referencia. Cuando haya fotografías definitivas, pueden sustituirse manteniendo nombres/rutas o cambiando una única referencia en `src/data/products.ts` y componentes de home.
+## Arquitectura y despliegue
 
-## Arquitectura
+Las páginas usan Server Components por defecto. Los componentes cliente se reservan para la navegación móvil, movimiento del hero, carruseles, vídeo y estado de apertura. Las imágenes locales se sirven con `next/image`; la galería ampliada usa el elemento nativo `dialog`.
 
-Las páginas son Server Components. Solo usan `"use client"` las piezas que lo necesitan:
+La aplicación está preparada para desplegarse como un proyecto Next.js informativo. No contiene backend, rutas API, base de datos ni credenciales.
 
-- `Intro089`
-- `Hero089`
-- `Navbar`
-- `Lightbox`
-- `OpenStatus`
-- `ProductExplorer`
+## Estado de seguridad de dependencias
 
-El parallax del hero usa `pointermove`, refs y `requestAnimationFrame`; no usa estado React por frame. Los filtros de productos se sincronizan con `?categoria=` y funcionan si la URL se abre directamente.
-
-## Deploy
-
-La app está preparada para Vercel como proyecto Next.js estático/informativo. No usa backend, API routes, base de datos ni credenciales.
+La revisión del 21 de octubre de 2026 actualizó Next.js y `eslint-config-next` a 16.4.2. `npm audit --omit=dev` no detecta vulnerabilidades en dependencias de producción. La auditoría completa mantiene cinco avisos altos agrupados en `braces@3.0.3`, dependencia transitiva de las herramientas de ESLint; esa es la versión más reciente publicada y npm solo propone una regresión incompatible a `eslint-config-next@14.2.35`. El riesgo queda limitado al análisis local de patrones durante desarrollo y debe revisarse cuando su cadena publique una corrección compatible.

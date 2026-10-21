@@ -10,8 +10,8 @@
 
 .media {
   object-fit: cover;
-  object-position: center;
-  transform: scale(1.05);
+  object-position: center 46%;
+  transform: scale(1.025);
 }
 
 .overlay {
@@ -100,6 +100,7 @@
 }
 
 .copy h1 {
+  max-width: 14ch;
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(2.45rem, 5.2vw, 4.8rem);
@@ -159,8 +160,13 @@
   }
 
   .copy h1 {
-    font-size: clamp(1.72rem, 7.4vw, 1.82rem);
-    line-height: 1;
+    max-width: 13ch;
+    font-size: clamp(2.15rem, 10.5vw, 3.25rem);
+    line-height: 0.94;
+  }
+
+  .media {
+    object-position: 55% center;
   }
 
   .scrollCue {

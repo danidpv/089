@@ -24,11 +24,17 @@ export function SocialLinks({ compact = false }: { compact?: boolean }) {
     <div className={`${styles.socials} ${compact ? styles.compact : ""}`} aria-label="Redes sociales">
       {items.map((item) =>
         item.href ? (
-          <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" aria-label={item.label}>
+          <a
+            key={item.label}
+            href={item.href}
+            target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+            rel={item.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+            aria-label={item.label}
+          >
             {item.icon}
           </a>
         ) : (
-          <span key={item.label} role="img" aria-label={`${item.label} pendiente`} title={`${item.label} pendiente`}>
+          <span key={item.label} role="link" aria-disabled="true" aria-label={`${item.label} pendiente`} title={`${item.label} pendiente`}>
             {item.icon}
           </span>
         )

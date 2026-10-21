@@ -33,10 +33,10 @@ export function BarbershopPreview() {
             />
             <div className={styles.photoCopy}>
               <span>{homeBarberiaImage.label}</span>
-              <strong>Descubre<br />la barberia</strong>
+              <strong>Descubre<br />la barbería</strong>
             </div>
             <span className={styles.photoCta}>
-              Ver la barberia
+              Ver la barbería
               <ArrowRight aria-hidden="true" size={18} />
             </span>
           </Link>
