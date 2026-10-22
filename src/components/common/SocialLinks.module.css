@@ -44,7 +44,7 @@
 }
 
 @media (max-width: 620px) {
-  .compact span[aria-disabled="true"] {
+  .compact {
     display: none;
   }
 }

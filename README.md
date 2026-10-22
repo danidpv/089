@@ -48,7 +48,7 @@ Los datos editables del negocio viven en `src/data`:
 - Marcas: `brands.ts`.
 - Reseñas verificadas y resumen de Booksy: `reviews.ts`.
 
-Instagram, TikTok, correo y el enlace directo para reseñar en Google permanecen en `null` hasta disponer de URLs oficiales confirmadas. La interfaz no inventa enlaces: oculta o desactiva esas acciones mientras falten.
+Instagram, TikTok y el correo oficial están configurados. El enlace directo para reseñar en Google permanece en `null` hasta disponer de una URL oficial confirmada; la interfaz no publica esa acción mientras falte.
 
 ## Contenido archivado
 

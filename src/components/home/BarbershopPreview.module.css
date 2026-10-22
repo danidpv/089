@@ -71,6 +71,7 @@
 }
 
 .photoCopy strong {
+  max-width: 10ch;
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.3vw, 3.2rem);
   line-height: 0.88;
@@ -78,12 +79,18 @@
 }
 
 .photoCta {
+  top: 18px;
   right: 18px;
-  bottom: 18px;
+  bottom: auto;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
   color: var(--color-accent);
+  background: rgba(7, 16, 14, 0.78);
+  backdrop-filter: blur(10px);
   font-size: 0.78rem;
   font-weight: 900;
   letter-spacing: 0.12em;
@@ -107,9 +114,4 @@
     min-height: 320px;
   }
 
-  .photoCta {
-    left: 18px;
-    right: auto;
-    bottom: 48px;
-  }
 }

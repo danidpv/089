@@ -16,6 +16,7 @@ export function hairSalonJsonLd() {
       addressCountry: siteConfig.address.country
     },
     telephone: siteConfig.phoneInternational,
+    email: siteConfig.email,
     url: siteConfig.siteUrl,
     image: `${siteConfig.siteUrl}/images/barberia/interior-main-frontal.webp`,
     hasMap: siteConfig.mapsUrl,

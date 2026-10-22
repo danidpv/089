@@ -57,6 +57,21 @@
   font-weight: 900;
 }
 
+.email {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.email svg {
+  flex: 0 0 auto;
+}
+
 .schedule {
   display: grid;
   gap: 12px;

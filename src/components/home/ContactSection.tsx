@@ -1,4 +1,4 @@
-import { MapPin, Phone, Route } from "lucide-react";
+import { Mail, MapPin, Phone, Route } from "lucide-react";
 import { BooksyButton } from "@/components/common/BooksyButton";
 import { OpenStatus } from "@/components/common/OpenStatus";
 import { siteConfig } from "@/data/site-config";
@@ -35,6 +35,10 @@ export function ContactSection() {
           <a className={styles.phone} href={`tel:${siteConfig.phoneInternational}`}>
             <Phone aria-hidden="true" size={18} />
             {siteConfig.phoneDisplay}
+          </a>
+          <a className={styles.email} href={`mailto:${siteConfig.email}`}>
+            <Mail aria-hidden="true" size={18} />
+            {siteConfig.email}
           </a>
           <div className={styles.schedule} aria-label="Horario de apertura">
             <h3>Horario</h3>
