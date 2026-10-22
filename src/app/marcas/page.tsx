@@ -54,9 +54,13 @@ export default function MarcasPage() {
           <div className={styles.brandGrid} data-testid="brand-grid">
             {brands.map((brand) => (
               <article className={styles.brandCard} key={brand.id}>
-                <span aria-hidden="true">089</span>
-                <h3>{brand.name}</h3>
-                <p>Marca profesional seleccionada por 089.</p>
+                <div className={styles.logoFrame}>
+                  <Image src={brand.image} alt={brand.alt} fill sizes="(max-width: 760px) 80vw, 38vw" />
+                </div>
+                <div className={styles.brandCopy}>
+                  <h3>{brand.name}</h3>
+                  <p>Marca profesional con la que trabaja 089.</p>
+                </div>
               </article>
             ))}
           </div>

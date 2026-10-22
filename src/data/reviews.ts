@@ -1,10 +1,10 @@
 import type { Review } from "./types";
 
 export const reviewSummary = {
-  rating: "5.0",
-  count: "829 reseñas",
-  source: "Booksy",
-  verifiedAt: "20 de octubre de 2026"
+  rating: "4,9",
+  count: "107 reseñas",
+  source: "Google",
+  checkedAt: "22 de octubre de 2026"
 };
 
 export const reviews: Review[] = [
@@ -28,5 +28,12 @@ export const reviews: Review[] = [
     author: "Alejandro",
     service: "Corte de caballero",
     source: "Booksy"
+  },
+  {
+    id: "daniel-del-pino",
+    quote: "Siendo sincero, una de las mejores peluquerías a las que he ido, por no decir la mejor, el trato es increíble, las instalaciones y lo mas importante la CALIDAD…",
+    author: "Daniel Del pino Velázquez",
+    service: "Publicada hace un mes",
+    source: "Google"
   }
 ];

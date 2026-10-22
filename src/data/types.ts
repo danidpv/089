@@ -56,5 +56,5 @@ export type Review = {
   quote: string;
   author: string;
   service: string;
-  source: "Booksy";
+  source: "Booksy" | "Google";
 };

@@ -14,13 +14,13 @@ export function ReviewsSection() {
             <p className="kicker">Reseñas</p>
             <h2 className="display">Lo que dicen<br />de 089.</h2>
           </div>
-          <a className={styles.score} href={siteConfig.bookingUrl} target="_blank" rel="noopener noreferrer">
+          <a className={styles.score} href={siteConfig.mapsUrl} target="_blank" rel="noopener noreferrer">
             <strong>{reviewSummary.rating}</strong>
             <span aria-label="Cinco estrellas">
               {Array.from({ length: 5 }, (_, index) => <Star key={index} size={15} fill="currentColor" />)}
             </span>
             <small>{reviewSummary.count} · {reviewSummary.source}</small>
-            <small>Verificado el {reviewSummary.verifiedAt}</small>
+            <small>Consultado el {reviewSummary.checkedAt}</small>
           </a>
         </div>
         <ReviewsCarousel reviews={reviews} />

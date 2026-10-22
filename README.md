@@ -46,7 +46,9 @@ Los datos editables del negocio viven en `src/data`:
 - Datos de contacto, Booksy, dirección, horarios y redes: `site-config.ts`.
 - Servicios y precios: `services.ts`.
 - Marcas: `brands.ts`.
-- Reseñas verificadas y resumen de Booksy: `reviews.ts`.
+- Reseñas acreditadas y resúmenes de plataformas: `reviews.ts`.
+
+Los logotipos proporcionados por el negocio se guardan en `public/images/brands`. La sección de reseñas combina testimonios acreditados de Booksy y Google; el resumen visible de Google corresponde a la captura facilitada el 22 de octubre de 2026.
 
 Instagram, TikTok y el correo oficial están configurados. El enlace directo para reseñar en Google permanece en `null` hasta disponer de una URL oficial confirmada; la interfaz no publica esa acción mientras falte.
 

@@ -133,7 +133,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
             <q>{review.quote}</q>
             <footer>
               <strong>{review.author}</strong>
-              <span>Cliente verificado · {review.source}</span>
+              <span>{review.source === "Booksy" ? "Cliente verificado · Booksy" : "Reseña de Google"}</span>
               <small>{review.service}</small>
             </footer>
           </article>
