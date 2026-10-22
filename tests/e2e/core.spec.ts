@@ -112,19 +112,21 @@ test("barbershop dialog traps focus, supports keys and restores its opener", asy
   await expect(opener).toBeFocused();
 });
 
-test("verified reviews use a manual keyboard-operable carousel", async ({ page }) => {
+test("Google and Booksy reviews use independent keyboard-operable carousels", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
   await waitForIntro(page);
-  const carousel = page.getByTestId("reviews-carousel");
-  await carousel.scrollIntoViewIfNeeded();
-  await expect(carousel.getByText("Cliente verificado · Booksy").first()).toBeVisible();
+  const googleCarousel = page.getByTestId("reviews-carousel-google");
+  const booksyCarousel = page.getByTestId("reviews-carousel-booksy");
+  await googleCarousel.scrollIntoViewIfNeeded();
+  await expect(googleCarousel.getByText("Reseña de Google")).toBeVisible();
+  await expect(googleCarousel.getByText("1 de 1")).toBeVisible();
+  await expect(booksyCarousel.getByText("Cliente verificado · Booksy").first()).toBeVisible();
 
-  const rail = carousel.getByLabel("Reseñas verificadas de clientes");
+  const rail = booksyCarousel.getByLabel("Reseñas de Booksy");
   await rail.focus();
   await page.keyboard.press("ArrowRight");
-  await expect(carousel.getByText("2 de 4")).toBeVisible();
-  await expect(carousel.getByText("Reseña de Google")).toBeAttached();
+  await expect(booksyCarousel.getByText("2 de 3")).toBeVisible();
 
   if (siteConfig.googleReviewUrl) {
     await expect(page.getByRole("link", { name: /Déjanos tu reseña en Google/i })).toHaveAttribute("href", siteConfig.googleReviewUrl);
@@ -138,14 +140,14 @@ test("reviews advance automatically and can be paused", async ({ page }, testInf
 
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/");
-  const carousel = page.getByTestId("reviews-carousel");
-  await expect(carousel.getByText("1 de 4")).toBeVisible();
-  await expect(carousel.getByText("2 de 4")).toBeVisible({ timeout: 7_000 });
+  const carousel = page.getByTestId("reviews-carousel-booksy");
+  await expect(carousel.getByText("1 de 3")).toBeVisible();
+  await expect(carousel.getByText("2 de 3")).toBeVisible({ timeout: 7_000 });
 
-  const pause = carousel.getByRole("button", { name: "Pausar carrusel de reseñas" });
+  const pause = carousel.getByRole("button", { name: "Pausar carrusel de Booksy" });
   await pause.focus();
   await page.keyboard.press("Enter");
-  await expect(carousel.getByRole("button", { name: "Reproducir carrusel de reseñas" })).toHaveAttribute("aria-pressed", "true");
+  await expect(carousel.getByRole("button", { name: "Reproducir carrusel de Booksy" })).toHaveAttribute("aria-pressed", "true");
 });
 
 test("product category validation rejects inherited and unknown properties", () => {

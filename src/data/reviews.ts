@@ -1,11 +1,17 @@
 import type { Review } from "./types";
 
-export const reviewSummary = {
-  rating: "4,9",
-  count: "107 reseñas",
-  source: "Google",
-  checkedAt: "22 de octubre de 2026"
-};
+export const reviewSummaries = {
+  Google: {
+    rating: "4,9",
+    count: "107 reseñas",
+    checkedAt: "22 de octubre de 2026"
+  },
+  Booksy: {
+    rating: "5,0",
+    count: "829 reseñas",
+    checkedAt: "20 de octubre de 2026"
+  }
+} as const;
 
 export const reviews: Review[] = [
   {

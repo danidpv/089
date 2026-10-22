@@ -17,7 +17,13 @@ function getReducedMotionPreference() {
   return window.matchMedia(reducedMotionQuery).matches;
 }
 
-export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
+type ReviewsCarouselProps = {
+  reviews: Review[];
+  label: string;
+  testId: string;
+};
+
+export function ReviewsCarousel({ reviews, label, testId }: ReviewsCarouselProps) {
   const railRef = useRef<HTMLDivElement>(null);
   const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const programmaticScrollTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -84,7 +90,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
   return (
     <div
       className={styles.carousel}
-      data-testid="reviews-carousel"
+      data-testid={testId}
       onMouseEnter={() => setInteracting(true)}
       onMouseLeave={() => setInteracting(false)}
       onFocusCapture={() => setInteracting(true)}
@@ -93,18 +99,19 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
       }}
     >
       <div className={styles.controls}>
-        <button type="button" aria-label="Reseña anterior" onClick={() => moveTo(activeIndex - 1)}>
+        <button type="button" aria-label={`Reseña anterior de ${label}`} disabled={reviews.length < 2} onClick={() => moveTo(activeIndex - 1)}>
           <ChevronLeft aria-hidden="true" size={20} />
         </button>
         <span aria-live="polite">{activeIndex + 1} de {reviews.length}</span>
-        <button type="button" aria-label="Reseña siguiente" onClick={() => moveTo(activeIndex + 1)}>
+        <button type="button" aria-label={`Reseña siguiente de ${label}`} disabled={reviews.length < 2} onClick={() => moveTo(activeIndex + 1)}>
           <ChevronRight aria-hidden="true" size={20} />
         </button>
         <button
           className={styles.playback}
           type="button"
-          aria-label={autoPlay ? "Pausar carrusel de reseñas" : "Reproducir carrusel de reseñas"}
+          aria-label={autoPlay ? `Pausar carrusel de ${label}` : `Reproducir carrusel de ${label}`}
           aria-pressed={!autoPlay}
+          disabled={reviews.length < 2}
           onClick={() => setAutoPlay((value) => !value)}
         >
           {autoPlay ? <Pause aria-hidden="true" size={16} /> : <Play aria-hidden="true" size={16} />}
@@ -115,7 +122,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
         className={styles.rail}
         ref={railRef}
         tabIndex={0}
-        aria-label="Reseñas verificadas de clientes"
+        aria-label={`Reseñas de ${label}`}
         onScroll={updateActive}
         onKeyDown={(event) => {
           if (event.key === "ArrowLeft") {
