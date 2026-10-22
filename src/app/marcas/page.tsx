@@ -46,9 +46,8 @@ export default function MarcasPage() {
           <div className="section-head">
             <div>
               <p className="kicker">Marcas</p>
-              <h2 className="display" id="brands-title">Herramientas<br />con criterio.</h2>
+              <h2 className="display" id="brands-title">Marcas<br />seleccionadas.</h2>
             </div>
-            <p className="lead">Una selección breve y reconocible, presentada sin catálogo, precios ni promesas de disponibilidad.</p>
           </div>
 
           <div className={styles.brandGrid} data-testid="brand-grid">
