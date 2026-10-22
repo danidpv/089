@@ -38,7 +38,8 @@ export function ReviewsCarousel({ reviews, label, testId }: ReviewsCarouselProps
     const nextIndex = (index + reviews.length) % reviews.length;
     const rail = railRef.current;
     const slide = rail?.children[nextIndex] as HTMLElement | undefined;
-    if (!rail || !slide) return;
+    const firstSlide = rail?.children[0] as HTMLElement | undefined;
+    if (!rail || !slide || !firstSlide) return;
 
     activeIndexRef.current = nextIndex;
     setActiveIndex(nextIndex);
@@ -48,7 +49,7 @@ export function ReviewsCarousel({ reviews, label, testId }: ReviewsCarouselProps
       programmaticScrollRef.current = false;
     }, prefersReducedMotion ? 100 : 700);
     rail.scrollTo({
-      left: slide.offsetLeft - rail.offsetLeft,
+      left: slide.offsetLeft - firstSlide.offsetLeft,
       behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   }, [prefersReducedMotion, reviews.length]);

@@ -207,3 +207,9 @@
     justify-content: flex-start;
   }
 }
+
+@media (max-width: 360px) {
+  .brands :global(.display) {
+    font-size: 2.35rem;
+  }
+}

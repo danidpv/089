@@ -37,9 +37,23 @@ export const reviews: Review[] = [
   },
   {
     id: "daniel-del-pino",
-    quote: "Siendo sincero, una de las mejores peluquerías a las que he ido, por no decir la mejor, el trato es increíble, las instalaciones y lo mas importante la CALIDAD…",
+    quote: "Siendo sincero, una de las mejores peluquerías a las que he ido, por no decir la mejor, el trato es increíble, las instalaciones y lo mas importante la CALIDAD DEL PELADO es mas que buena.",
     author: "Daniel Del pino Velázquez",
     service: "Publicada hace un mes",
+    source: "Google"
+  },
+  {
+    id: "pedro-tornero",
+    quote: "Fui a cortarme el pelo y salí muy satisfecho. Son muy amables y el trabajo que hacen con el corte es increíble. 100% recomendados.",
+    author: "Pedro Tornero",
+    service: "Publicada hace 3 meses",
+    source: "Google"
+  },
+  {
+    id: "r-google",
+    quote: "GENIAL. Es desde ahora mi peluquería de confianza. Sistema de reservas bueno, gama de productos de cuidado de calidad y un servicio y corte perfecto. Te ven al detalle, pasan tiempo contigo y se paran a tratarte. Se agradece, y se recompensa. Aquí un cliente nuevo y fiel 💗",
+    author: "R.",
+    service: "Publicada hace 5 meses",
     source: "Google"
   }
 ];

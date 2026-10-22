@@ -119,9 +119,14 @@ test("Google and Booksy reviews use independent keyboard-operable carousels", as
   const googleCarousel = page.getByTestId("reviews-carousel-google");
   const booksyCarousel = page.getByTestId("reviews-carousel-booksy");
   await googleCarousel.scrollIntoViewIfNeeded();
-  await expect(googleCarousel.getByText("Reseña de Google")).toBeVisible();
-  await expect(googleCarousel.getByText("1 de 1")).toBeVisible();
+  await expect(googleCarousel.getByText("Reseña de Google").first()).toBeVisible();
+  await expect(googleCarousel.getByText("1 de 3")).toBeVisible();
   await expect(booksyCarousel.getByText("Cliente verificado · Booksy").first()).toBeVisible();
+
+  const googleRail = googleCarousel.getByLabel("Reseñas de Google");
+  await googleRail.focus();
+  await page.keyboard.press("ArrowRight");
+  await expect(googleCarousel.getByText("2 de 3")).toBeVisible();
 
   const rail = booksyCarousel.getByLabel("Reseñas de Booksy");
   await rail.focus();
