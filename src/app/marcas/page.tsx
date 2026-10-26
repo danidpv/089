@@ -54,12 +54,9 @@ export default function MarcasPage() {
             {brands.map((brand) => (
               <article className={styles.brandCard} key={brand.id}>
                 <div className={styles.logoFrame}>
-                  <Image src={brand.image} alt={brand.alt} fill sizes="(max-width: 760px) 80vw, 38vw" />
+                  <Image src={brand.image} alt={brand.alt} fill sizes="(max-width: 800px) 40vw, 20vw" />
                 </div>
-                <div className={styles.brandCopy}>
-                  <h3>{brand.name}</h3>
-                  <p>Marca profesional con la que trabaja 089.</p>
-                </div>
+                <h3>{brand.name}</h3>
               </article>
             ))}
           </div>
