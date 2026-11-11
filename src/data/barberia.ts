@@ -46,9 +46,16 @@ export const barberiaGallery: BarberiaImage[] = [
   {
     src: "/images/brands/brand-suavecito-team.jpeg",
     alt: "Equipo de 089 mostrando una pieza de la marca Suavecito",
-    label: "Marcas",
+    label: "Equipo 089",
     width: 1536,
     height: 2048
+  },
+  {
+    src: "/images/brands/brands-display.jpeg",
+    alt: "Exposición de productos profesionales utilizados en 089",
+    label: "Marcas",
+    width: 768,
+    height: 576
   },
   {
     src: "/images/services/service-cut.jpeg",

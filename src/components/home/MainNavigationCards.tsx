@@ -14,8 +14,8 @@ const cards = [
     eyebrow: "Selección profesional",
     title: "Marcas.",
     href: "/marcas",
-    image: "/images/brands/brand-suavecito-team.jpeg",
-    alt: "Equipo de 089 mostrando una pieza de la marca Suavecito"
+    image: "/images/brands/brands-display.jpeg",
+    alt: "Exposición de productos profesionales utilizados en 089"
   },
   {
     eyebrow: "Montequinto",
