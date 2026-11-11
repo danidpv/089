@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Marcas profesionales de 089",
     description: "Uppercut Deluxe, Suavecito, Dick Johnson y Dr. K en la selección profesional de 089.",
     url: "/marcas",
-    images: [{ url: "/images/branding/window-logo.jpg", width: 680, height: 454 }]
+    images: [{ url: "/images/brands/brand-suavecito-team.jpeg", width: 1536, height: 2048 }]
   }
 };
 
@@ -25,7 +25,7 @@ export default function MarcasPage() {
       <section className={styles.hero}>
         <Image
           className={styles.heroImage}
-          src="/images/branding/window-logo.jpg"
+          src="/images/brands/brand-suavecito-team.jpeg"
           alt=""
           fill
           sizes="100vw"

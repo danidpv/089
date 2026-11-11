@@ -7,22 +7,22 @@ const cards = [
     eyebrow: "Servicios",
     title: "Servicios 089.",
     href: "/servicios",
-    image: "/images/services/barbers-at-work-vertical.webp",
-    alt: "Profesionales de 089 trabajando en varios cortes"
+    image: "/images/services/service-cut.jpeg",
+    alt: "Barbero de 089 trabajando un corte de caballero"
   },
   {
     eyebrow: "Selección profesional",
     title: "Marcas.",
     href: "/marcas",
-    image: "/images/branding/window-logo.jpg",
-    alt: "Identidad gráfica de 089 en el escaparate"
+    image: "/images/brands/brand-suavecito-team.jpeg",
+    alt: "Equipo de 089 mostrando una pieza de la marca Suavecito"
   },
   {
     eyebrow: "Montequinto",
     title: "La barbería.",
     href: "/barberia",
-    image: "/images/barberia/interior-main-frontal.webp",
-    alt: "Interior de 089 Barbería Profesional"
+    image: "/images/exterior/facade-motorcycle.jpeg",
+    alt: "Fachada de 089 Barbería Profesional con motocicleta"
   }
 ];
 

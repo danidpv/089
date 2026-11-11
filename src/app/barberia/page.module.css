@@ -9,7 +9,7 @@
 
 .heroImage {
   object-fit: cover;
-  object-position: center;
+  object-position: center 58%;
   transform: scale(1.03);
 }
 
@@ -64,7 +64,7 @@
 .storySection {
   background:
     linear-gradient(180deg, rgba(13, 27, 24, 0.96), rgba(7, 16, 14, 0.98)),
-    url("/images/exterior/facade-sign-night.webp") center / cover fixed;
+    url("/images/exterior/facade-motorcycle.jpeg") center 58% / cover fixed;
 }
 
 .storyGrid {

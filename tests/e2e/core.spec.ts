@@ -98,7 +98,7 @@ test("barbershop dialog traps focus, supports keys and restores its opener", asy
   await page.goto("/barberia");
   await expect(page.getByRole("heading", { level: 1, name: "El local de 089" })).toBeVisible();
 
-  const opener = page.getByRole("button", { name: "Abrir foto: Interior" });
+  const opener = page.getByRole("button", { name: "Abrir foto: Fachada" });
   await opener.click();
   const dialog = page.getByRole("dialog");
   await expect(dialog).toBeVisible();
@@ -106,7 +106,7 @@ test("barbershop dialog traps focus, supports keys and restores its opener", asy
   await page.keyboard.press("Shift+Tab");
   await expect.poll(() => page.evaluate(() => Boolean(document.activeElement?.closest("dialog")))).toBe(true);
   await page.keyboard.press("ArrowRight");
-  await expect(dialog.getByRole("img", { name: /Vista longitudinal/i })).toBeVisible();
+  await expect(dialog.getByRole("img", { name: /Vista general del interior/i })).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(dialog).toBeHidden();
   await expect(opener).toBeFocused();

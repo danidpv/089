@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Servicios 089 | Barbería en Montequinto",
     description: "Consulta cortes, barba, duración y precios de 089 Barbería Profesional.",
     url: "/servicios",
-    images: [{ url: "/images/barberia/interior-working.webp", width: 1600, height: 1200 }]
+    images: [{ url: "/images/services/service-cut.jpeg", width: 1536, height: 2048 }]
   }
 };
 
@@ -28,7 +28,7 @@ export default function ServiciosPage() {
       <section className={styles.hero}>
         <Image
           className={styles.heroImage}
-          src="/images/barberia/interior-working.webp"
+          src="/images/services/service-cut.jpeg"
           alt=""
           fill
           sizes="100vw"
