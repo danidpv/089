@@ -192,4 +192,8 @@ export const barberiaGallerySections: BarberiaGallerySection[] = [
 ];
 
 export const barberiaGallery = barberiaGallerySections.flatMap((section) => section.images);
-export const barberiaStoryImages = interiorImages.slice(0, 3);
+export const barberiaStoryImages: BarberiaImage[] = [
+  { ...interiorImages[0], label: "Interior" },
+  { ...exteriorImages[0], label: "Exterior" },
+  { ...marcasImages[0], label: "Marcas" }
+];
