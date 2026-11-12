@@ -23,32 +23,74 @@ export const homeBarberiaImage: BarberiaImage = {
 export const barberiaGallery: BarberiaImage[] = [
   homeBarberiaImage,
   {
-    src: "/images/barberia/interior-stations.jpeg",
-    alt: "Vista general del interior de 089 con los puestos de barbería",
-    label: "Puestos",
+    src: "/images/exterior/facade-sign-night.webp",
+    alt: "Rótulo exterior iluminado de 089 Barbería Profesional",
+    label: "Exterior",
+    width: 1080,
+    height: 750
+  },
+  {
+    src: "/images/exterior/door-logo-gold.webp",
+    alt: "Logotipo dorado de 089 en la entrada de la barbería",
+    label: "Entrada",
+    width: 788,
+    height: 788
+  },
+  {
+    src: "/images/interior/interior-main-frontal.webp",
+    alt: "Vista frontal de los puestos de trabajo de 089",
+    label: "Interior",
     width: 1080,
     height: 721
   },
   {
-    src: "/images/barberia/interior-mirror.jpeg",
+    src: "/images/interior/interior-longitudinal.webp",
+    alt: "Vista longitudinal del interior de 089 y sus puestos",
+    label: "El local",
+    width: 1080,
+    height: 740
+  },
+  {
+    src: "/images/interior/interior-working.webp",
+    alt: "Equipo de 089 trabajando en el interior de la barbería",
+    label: "Trabajo diario",
+    width: 1600,
+    height: 1200
+  },
+  {
+    src: "/images/interior/interior-mirror.jpeg",
     alt: "Puesto de 089 reflejado en un espejo con marco de madera",
-    label: "Interior",
+    label: "Puestos",
     width: 768,
     height: 1024
   },
   {
-    src: "/images/barberia/barber-at-work.jpeg",
+    src: "/images/interior/barber-at-work.jpeg",
     alt: "Barbero de 089 trabajando un corte frente al espejo",
     label: "Equipo",
     width: 1152,
     height: 2048
   },
   {
-    src: "/images/brands/brand-suavecito-team.jpeg",
-    alt: "Equipo de 089 mostrando una pieza de la marca Suavecito",
-    label: "Equipo 089",
-    width: 1536,
-    height: 2048
+    src: "/images/interior/interior-01.jpg",
+    alt: "Detalle del interior de 089 Barbería Profesional",
+    label: "Interior",
+    width: 680,
+    height: 454
+  },
+  {
+    src: "/images/interior/interior-02.jpg",
+    alt: "Zona de trabajo y mobiliario del local de 089",
+    label: "Puestos",
+    width: 680,
+    height: 454
+  },
+  {
+    src: "/images/interior/interior-03.jpg",
+    alt: "Ambiente interior de 089 Barbería Profesional",
+    label: "Ambiente",
+    width: 900,
+    height: 680
   },
   {
     src: "/images/brands/brands-display.jpeg",
@@ -58,35 +100,42 @@ export const barberiaGallery: BarberiaImage[] = [
     height: 576
   },
   {
-    src: "/images/services/service-cut.jpeg",
+    src: "/images/services/Servicios089.jpeg",
+    alt: "Clientes y barberos durante una jornada en 089",
+    label: "Servicios 089",
+    width: 768,
+    height: 1024
+  },
+  {
+    src: "/images/services/Corte.jpeg",
     alt: "Barbero de 089 trabajando un corte de caballero",
-    label: "Servicio",
+    label: "Corte",
     width: 1536,
     height: 2048
   },
   {
-    src: "/images/barberia/haircut-modern.jpeg",
+    src: "/images/services/CorteModerno.jpeg",
     alt: "Corte moderno con textura y contorno limpio realizado en 089",
     label: "Corte moderno",
     width: 1536,
     height: 2048
   },
   {
-    src: "/images/barberia/haircut-style.jpeg",
+    src: "/images/services/CorteStyle.jpeg",
     alt: "Corte con textura y acabado posterior realizado en 089",
     label: "Corte con textura",
     width: 1536,
     height: 2048
   },
   {
-    src: "/images/barberia/haircut-clean.jpeg",
+    src: "/images/services/corteLimpio.jpeg",
     alt: "Corte clásico peinado y perfilado realizado en 089",
     label: "Corte limpio",
     width: 1536,
     height: 2048
   },
   {
-    src: "/images/barberia/haircut-beard.jpeg",
+    src: "/images/services/Corte+barba.jpeg",
     alt: "Corte degradado y barba larga perfilada en 089",
     label: "Corte y barba",
     width: 2048,
@@ -96,13 +145,6 @@ export const barberiaGallery: BarberiaImage[] = [
     src: "/images/services/beard-trim-closeup.webp",
     alt: "Detalle de arreglo de barba en 089",
     label: "Barba",
-    width: 900,
-    height: 1200
-  },
-  {
-    src: "/images/people/client-finished-look.webp",
-    alt: "Cliente con acabado de barbería terminado",
-    label: "Acabado",
     width: 900,
     height: 1200
   }

@@ -70,7 +70,7 @@
   color: var(--color-ink);
   background:
     linear-gradient(rgba(244, 238, 229, 0.95), rgba(244, 238, 229, 0.98)),
-    url("/images/barberia/interior-02.jpg") center / cover;
+    url("/images/interior/interior-02.jpg") center / cover;
 }
 
 .services :global(.lead) {

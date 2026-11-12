@@ -7,9 +7,8 @@ const cards = [
     eyebrow: "Servicios",
     title: "Servicios 089.",
     href: "/servicios",
-    image: "/images/services/service-cut.jpeg",
-    alt: "Corte de caballero realizado en 089",
-    imageClassName: styles.serviceImage
+    image: "/images/services/Servicios089.jpeg",
+    alt: "Clientes y barberos en el interior de 089"
   },
   {
     eyebrow: "Selección profesional",
@@ -33,13 +32,7 @@ export function MainNavigationCards() {
       <div className={styles.grid}>
         {cards.map((card) => (
           <Link className={styles.card} href={card.href} key={card.href}>
-            <Image
-              className={card.imageClassName}
-              src={card.image}
-              alt={card.alt}
-              fill
-              sizes="(max-width: 820px) 100vw, 33vw"
-            />
+            <Image src={card.image} alt={card.alt} fill sizes="(max-width: 820px) 100vw, 33vw" />
             <span className={styles.shade} />
             <span className={styles.label}>
               <small>{card.eyebrow}</small>

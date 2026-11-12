@@ -106,7 +106,7 @@ test("barbershop dialog traps focus, supports keys and restores its opener", asy
   await page.keyboard.press("Shift+Tab");
   await expect.poll(() => page.evaluate(() => Boolean(document.activeElement?.closest("dialog")))).toBe(true);
   await page.keyboard.press("ArrowRight");
-  await expect(dialog.getByRole("img", { name: /Vista general del interior/i })).toBeVisible();
+  await expect(dialog.getByRole("img", { name: /Rótulo exterior iluminado/i })).toBeVisible();
   await page.keyboard.press("Escape");
   await expect(dialog).toBeHidden();
   await expect(opener).toBeFocused();

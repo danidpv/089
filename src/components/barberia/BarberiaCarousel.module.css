@@ -111,7 +111,7 @@
   width: 100%;
   min-width: 0;
   justify-content: center;
-  gap: 8px;
+  gap: 5px;
 }
 
 .dots button {
@@ -120,6 +120,7 @@
   max-width: 34px;
   width: 34px;
   height: 3px;
+  padding: 0;
   border: 0;
   border-radius: 999px;
   background: rgba(244, 238, 229, 0.28);

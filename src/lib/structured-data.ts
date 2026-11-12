@@ -18,7 +18,7 @@ export function hairSalonJsonLd() {
     telephone: siteConfig.phoneInternational,
     email: siteConfig.email,
     url: siteConfig.siteUrl,
-    image: `${siteConfig.siteUrl}/images/barberia/interior-main-frontal.webp`,
+    image: `${siteConfig.siteUrl}/images/interior/interior-main-frontal.webp`,
     hasMap: siteConfig.mapsUrl,
     ...(sameAs.length > 0 ? { sameAs } : {}),
     priceRange: "13 € - 23 €",

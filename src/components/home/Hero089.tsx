@@ -44,7 +44,7 @@ export function Hero089() {
     <section className={styles.hero} id="inicio" ref={heroRef}>
       <Image
         className={styles.media}
-        src="/images/barberia/interior-main-frontal.webp"
+        src="/images/interior/interior-main-frontal.webp"
         alt=""
         fill
         sizes="100vw"

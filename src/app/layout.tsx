@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     siteName: "089 Barbería Profesional",
     locale: "es_ES",
     type: "website",
-    images: [{ url: "/images/barberia/interior-main-frontal.webp", width: 1080, height: 721 }]
+    images: [{ url: "/images/interior/interior-main-frontal.webp", width: 1080, height: 721 }]
   },
   twitter: {
     card: "summary_large_image",
     title: "089 Barbería Profesional | Montequinto",
     description: "Barbería y peluquería masculina en Montequinto, Dos Hermanas.",
-    images: ["/images/barberia/interior-main-frontal.webp"]
+    images: ["/images/interior/interior-main-frontal.webp"]
   },
   icons: {
     icon: "/images/branding/logo-089.svg"

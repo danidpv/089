@@ -2,7 +2,7 @@
   color: var(--color-ink);
   background:
     linear-gradient(rgba(244, 238, 229, 0.93), rgba(244, 238, 229, 0.96)),
-    url("/images/barberia/interior-01.jpg") center / cover;
+    url("/images/interior/interior-01.jpg") center / cover;
   padding: clamp(72px, 9vw, 116px) 5vw;
 }
 
