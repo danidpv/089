@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "La barbería 089 por dentro",
     description: "Conoce el interior, la fachada y el ambiente de 089 en Montequinto.",
     url: "/barberia",
-    images: [{ url: "/images/exterior/facade-motorcycle.jpeg", width: 768, height: 1024 }]
+    images: [{ url: "/images/exterior/Fachada1.jpeg", width: 1200, height: 1600 }]
   }
 };
 

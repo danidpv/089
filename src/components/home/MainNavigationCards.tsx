@@ -21,8 +21,8 @@ const cards = [
     eyebrow: "Montequinto",
     title: "La barbería.",
     href: "/barberia",
-    image: "/images/exterior/facade-motorcycle.jpeg",
-    alt: "Fachada de 089 Barbería Profesional con motocicleta"
+    image: "/images/exterior/Fachada1.jpeg",
+    alt: "Fachada de 089 Barbería Profesional con motocicletas"
   }
 ];
 
