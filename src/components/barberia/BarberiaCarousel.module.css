@@ -85,18 +85,32 @@
   transform: scale(1.025);
 }
 
-.slide span,
+.slideLabel,
 .slide i {
   position: absolute;
   z-index: 1;
   bottom: 18px;
 }
 
-.slide span {
+.slideLabel {
   left: 18px;
+  display: grid;
+  gap: 4px;
+  text-align: left;
+}
+
+.slideLabel b {
   font-size: 0.72rem;
   font-weight: 900;
   letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.slideLabel small {
+  color: rgba(244, 238, 229, 0.68);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -199,6 +213,12 @@
 .modalNext {
   width: 52px;
   height: 52px;
+}
+
+.modalPrev:disabled,
+.modalNext:disabled {
+  cursor: not-allowed;
+  opacity: 0.28;
 }
 
 @media (max-width: 760px) {

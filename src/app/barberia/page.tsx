@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import { BarberiaCarousel } from "@/components/barberia/BarberiaCarousel";
 import { BooksyButton } from "@/components/common/BooksyButton";
-import { barberiaGallery } from "@/data/barberia";
+import { barberiaGallerySections, barberiaStoryImages, homeBarberiaImage } from "@/data/barberia";
 import { siteConfig } from "@/data/site-config";
 import styles from "./page.module.css";
 
@@ -21,12 +21,17 @@ export const metadata: Metadata = {
 };
 
 export default function BarberiaPage() {
-  const [heroImage, ...supportImages] = barberiaGallery;
-
   return (
     <main>
       <section className={styles.hero}>
-        <Image src={heroImage.src} alt={heroImage.alt} fill priority sizes="100vw" className={styles.heroImage} />
+        <Image
+          src={homeBarberiaImage.src}
+          alt={homeBarberiaImage.alt}
+          fill
+          priority
+          sizes="100vw"
+          className={styles.heroImage}
+        />
         <div className={styles.heroBg} />
         <div className={styles.heroInner}>
           <p className="kicker">La barbería</p>
@@ -46,14 +51,14 @@ export default function BarberiaPage() {
         <div className="container">
           <div className="section-head">
             <div>
-              <p className="kicker">Galeria</p>
-              <h2 className="display">Interior,<br />fachada y oficio.</h2>
+              <p className="kicker">Galerías</p>
+              <h2 className="display">Exterior, interior,<br />equipo y cortes.</h2>
             </div>
             <p className="lead">
-              Fotos reales del local y del trabajo diario. Usa las flechas o el teclado para moverte por la galería.
+              Elige una sección y recorre únicamente sus fotos. Marcas mantiene su propia galería independiente.
             </p>
           </div>
-          <BarberiaCarousel images={barberiaGallery} />
+          <BarberiaCarousel sections={barberiaGallerySections} />
         </div>
       </section>
 
@@ -68,7 +73,7 @@ export default function BarberiaPage() {
                 herramientas y producto profesional forman parte del mismo lenguaje visual.
               </p>
             </div>
-            {supportImages.slice(0, 3).map((image) => (
+            {barberiaStoryImages.map((image) => (
               <figure className={styles.storyImage} key={image.src}>
                 <Image src={image.src} alt={image.alt} fill sizes="(max-width: 860px) 100vw, 30vw" />
                 <figcaption>{image.label}</figcaption>
