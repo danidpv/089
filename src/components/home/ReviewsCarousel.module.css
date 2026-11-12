@@ -102,10 +102,50 @@
 @media (max-width: 600px) {
   .controls {
     justify-content: space-between;
+    gap: 3px;
+  }
+
+  .controls button {
+    width: 26px;
+    height: 26px;
+  }
+
+  .controls button svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .controls .playback {
+    margin-left: 0;
+  }
+
+  .controls span {
+    min-width: 34px;
+    font-size: 0.52rem;
+    letter-spacing: 0.04em;
   }
 
   .review {
-    min-height: 220px;
+    min-height: 250px;
+    gap: 16px;
+    padding: 12px;
+  }
+
+  .review q {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 1.05rem;
+    line-height: 1.08;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+  }
+
+  .review strong,
+  .review span,
+  .review small {
+    font-size: 0.55rem;
+    letter-spacing: 0.05em;
+    overflow-wrap: anywhere;
   }
 }
 
