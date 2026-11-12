@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Play } from "lucide-react";
 import { BarbershopVideo } from "@/components/home/BarbershopVideo";
-import { barberiaVideo, homeBarberiaImage } from "@/data/barberia";
+import { barberiaPreviewImage, barberiaVideo } from "@/data/barberia";
 import styles from "./BarbershopPreview.module.css";
 
 export function BarbershopPreview() {
@@ -26,13 +26,13 @@ export function BarbershopPreview() {
           </div>
           <Link className={styles.photoLink} href="/barberia">
             <Image
-              src={homeBarberiaImage.src}
-              alt={homeBarberiaImage.alt}
+              src={barberiaPreviewImage.src}
+              alt={barberiaPreviewImage.alt}
               fill
               sizes="(max-width: 860px) 100vw, 42vw"
             />
             <div className={styles.photoCopy}>
-              <span>{homeBarberiaImage.label}</span>
+              <span>{barberiaPreviewImage.label}</span>
               <strong>Descubre<br />la barbería</strong>
             </div>
             <span className={styles.photoCta}>

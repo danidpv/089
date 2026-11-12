@@ -8,8 +8,16 @@ export type BarberiaImage = {
 
 export const barberiaVideo = {
   src: "/media/barberia-tour.mp4",
-  poster: "/images/branding/window-logo.jpg",
+  poster: "/media/barberia-tour-poster.webp",
   label: "Recorrido real de 089"
+};
+
+export const barberiaPreviewImage: BarberiaImage = {
+  src: "/images/branding/window-logo.jpg",
+  alt: "Logotipo de 089 Barbería Profesional en el cristal de la entrada",
+  label: "Fachada",
+  width: 680,
+  height: 454
 };
 
 export const homeBarberiaImage: BarberiaImage = {
