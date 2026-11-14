@@ -52,9 +52,14 @@ export default function MarcasPage() {
 
           <div className={styles.brandGrid} data-testid="brand-grid">
             {brands.map((brand) => (
-              <article className={styles.brandCard} key={brand.id}>
+              <article className={styles.brandCard} data-brand={brand.id} key={brand.id}>
                 <div className={styles.logoFrame}>
-                  <Image src={brand.image} alt={brand.alt} fill sizes="(max-width: 800px) 40vw, 20vw" />
+                  <Image
+                    src={brand.image}
+                    alt={brand.alt}
+                    fill
+                    sizes="(max-width: 1024px) 36vw, 18vw"
+                  />
                 </div>
                 <h3>{brand.name}</h3>
               </article>

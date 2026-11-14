@@ -68,46 +68,75 @@
 .brandGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.035);
+  gap: 12px;
 }
 
 .brandCard {
   display: grid;
   min-width: 0;
-  min-height: 250px;
-  grid-template-rows: 150px auto;
+  min-height: 224px;
+  grid-template-rows: 116px auto;
   align-content: center;
-  gap: 18px;
-  padding: clamp(22px, 3vw, 38px) clamp(14px, 2vw, 28px);
-  border-right: 1px solid var(--line);
+  gap: 22px;
+  padding: clamp(24px, 2.7vw, 34px) clamp(16px, 2vw, 28px);
+  border: 1px solid rgba(244, 238, 229, 0.13);
+  border-radius: 12px;
+  background: rgba(244, 238, 229, 0.025);
   text-align: center;
-}
-
-.brandCard:last-child {
-  border-right: 0;
+  transition:
+    border-color 220ms ease,
+    background-color 220ms ease;
 }
 
 .logoFrame {
   position: relative;
-  width: 100%;
-  height: 150px;
+  width: min(100%, 190px);
+  height: 116px;
+  margin-inline: auto;
 }
 
 .logoFrame img {
   object-fit: contain;
-  transition: transform 240ms ease;
+  opacity: 0.82;
+  filter: grayscale(1) saturate(0) contrast(1.12) brightness(1.28);
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.brandCard[data-brand="uppercut-deluxe"] .logoFrame {
+  width: min(100%, 184px);
+}
+
+.brandCard[data-brand="suavecito"] .logoFrame {
+  width: min(100%, 170px);
+}
+
+.brandCard[data-brand="dick-johnson"] .logoFrame {
+  width: min(100%, 176px);
+}
+
+.brandCard[data-brand="dr-k"] .logoFrame {
+  width: min(100%, 126px);
+}
+
+.brandCard[data-brand="dr-k"] .logoFrame img {
+  filter: invert(89%) sepia(9%) saturate(243%) hue-rotate(347deg) brightness(107%);
+}
+
+.brandCard:hover {
+  border-color: rgba(158, 222, 232, 0.3);
+  background: rgba(244, 238, 229, 0.045);
 }
 
 .brandCard:hover .logoFrame img {
-  transform: scale(1.04);
+  opacity: 0.98;
+  transform: translateY(-2px) scale(1.025);
 }
 
 .brandCard h3 {
   margin: 0;
-  color: rgba(244, 238, 229, 0.68);
+  color: rgba(244, 238, 229, 0.72);
   font-family: var(--font-display);
   font-size: clamp(1rem, 1.6vw, 1.35rem);
   font-weight: 600;
@@ -158,6 +187,12 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 1024px) {
+  .brandGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 760px) {
   .hero {
     min-height: 68svh;
@@ -168,27 +203,31 @@
     font-size: clamp(3rem, 16vw, 5.1rem);
   }
 
-  .brandGrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .brandCard {
-    min-height: 210px;
-    grid-template-rows: 112px auto;
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-
-  .brandCard:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .brandCard:nth-last-child(-n + 2) {
-    border-bottom: 0;
+    min-height: 176px;
+    grid-template-rows: 88px auto;
+    gap: 15px;
+    padding: 20px 12px;
   }
 
   .logoFrame {
-    height: 112px;
+    height: 88px;
+  }
+
+  .brandCard[data-brand="uppercut-deluxe"] .logoFrame {
+    width: min(100%, 144px);
+  }
+
+  .brandCard[data-brand="suavecito"] .logoFrame {
+    width: min(100%, 132px);
+  }
+
+  .brandCard[data-brand="dick-johnson"] .logoFrame {
+    width: min(100%, 138px);
+  }
+
+  .brandCard[data-brand="dr-k"] .logoFrame {
+    width: min(100%, 94px);
   }
 
   .cta {
@@ -198,6 +237,17 @@
 
   .ctaActions {
     justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brandCard,
+  .logoFrame img {
+    transition: none;
+  }
+
+  .brandCard:hover .logoFrame img {
+    transform: none;
   }
 }
 
