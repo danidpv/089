@@ -79,13 +79,7 @@
   align-content: center;
   gap: 22px;
   padding: clamp(24px, 2.7vw, 34px) clamp(16px, 2vw, 28px);
-  border: 1px solid rgba(244, 238, 229, 0.13);
-  border-radius: 12px;
-  background: rgba(244, 238, 229, 0.025);
   text-align: center;
-  transition:
-    border-color 220ms ease,
-    background-color 220ms ease;
 }
 
 .logoFrame {
@@ -97,11 +91,9 @@
 
 .logoFrame img {
   object-fit: contain;
-  opacity: 0.82;
-  filter: grayscale(1) saturate(0) contrast(1.12) brightness(1.28);
-  transition:
-    opacity 220ms ease,
-    transform 220ms ease;
+  opacity: 1;
+  filter: none;
+  transition: transform 220ms ease;
 }
 
 .brandCard[data-brand="uppercut-deluxe"] .logoFrame {
@@ -120,17 +112,7 @@
   width: min(100%, 126px);
 }
 
-.brandCard[data-brand="dr-k"] .logoFrame img {
-  filter: invert(89%) sepia(9%) saturate(243%) hue-rotate(347deg) brightness(107%);
-}
-
-.brandCard:hover {
-  border-color: rgba(158, 222, 232, 0.3);
-  background: rgba(244, 238, 229, 0.045);
-}
-
 .brandCard:hover .logoFrame img {
-  opacity: 0.98;
   transform: translateY(-2px) scale(1.025);
 }
 
@@ -241,7 +223,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .brandCard,
   .logoFrame img {
     transition: none;
   }
