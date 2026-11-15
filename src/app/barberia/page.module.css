@@ -9,8 +9,7 @@
 
 .heroImage {
   object-fit: cover;
-  object-position: center 58%;
-  transform: scale(1.03);
+  object-position: center 31%;
 }
 
 .heroBg {
@@ -190,6 +189,10 @@
   .hero {
     min-height: 74svh;
     padding-inline: 20px;
+  }
+
+  .heroImage {
+    object-position: center 46%;
   }
 
   .storySection {
