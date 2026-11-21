@@ -153,14 +153,20 @@
     grid-template-columns: auto auto 1fr auto auto;
   }
 
+  .navBooksy {
+    grid-column: 4;
+  }
+
   .menuButton {
     display: inline-flex;
+    grid-column: 5;
+    justify-self: end;
   }
 }
 
 @media (max-width: 620px) {
   .navbar {
-    grid-template-columns: auto auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     gap: 9px;
     padding-inline: 16px;
   }
@@ -175,12 +181,14 @@
   }
 
   .navBooksy {
+    grid-column: 2;
     min-height: 30px;
     padding-inline: 11px;
     font-size: 0.44rem;
   }
 
   .menuButton {
+    grid-column: 3;
     width: 38px;
     height: 38px;
   }
