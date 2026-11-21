@@ -77,6 +77,18 @@ test("official social and email links use the supplied destinations", async ({ p
   await expect(page.locator(`a[href="mailto:${siteConfig.email}"]`).first()).toBeAttached();
 });
 
+test("responses include the required security headers", async ({ request }) => {
+  const response = await request.get("/");
+  const headers = response.headers();
+
+  expect(headers["content-security-policy"]).toContain("default-src 'self'");
+  expect(headers["content-security-policy"]).toContain("frame-ancestors 'none'");
+  expect(headers["strict-transport-security"]).toContain("max-age=63072000");
+  expect(headers["x-content-type-options"]).toBe("nosniff");
+  expect(headers["x-frame-options"]).toBe("DENY");
+  expect(headers["x-powered-by"]).toBeUndefined();
+});
+
 test("mobile menu closes on Escape and resets at the desktop breakpoint", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
