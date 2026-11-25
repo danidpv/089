@@ -11,7 +11,7 @@ export const openingHours: OpeningDay[] = [
 ];
 
 export const siteConfig = {
-  siteUrl: "https://089barberia-profesional.vercel.app",
+  siteUrl: "https://www.089barberia.es",
   name: "089 Barbería Profesional",
   shortName: "089",
   locationLine: "Montequinto · Dos Hermanas",

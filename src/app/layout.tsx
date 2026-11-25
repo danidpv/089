@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Archivo_Narrow, Manrope } from "next/font/google";
-import Script from "next/script";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { siteConfig } from "@/data/site-config";
@@ -29,15 +28,6 @@ export const metadata: Metadata = {
   },
   description:
     "089 Barbería Profesional en Montequinto, Dos Hermanas. Corte de caballero, barba y servicios de peluquería masculina con reserva en Booksy.",
-  openGraph: {
-    title: "089 Barbería Profesional | Montequinto",
-    description:
-      "Barbería y peluquería masculina en Montequinto. Consulta servicios, precios y reserva tu cita.",
-    siteName: "089 Barbería Profesional",
-    locale: "es_ES",
-    type: "website",
-    images: [{ url: "/images/interior/interior-main-frontal.webp", width: 1080, height: 721 }]
-  },
   twitter: {
     card: "summary_large_image",
     title: "089 Barbería Profesional | Montequinto",
@@ -53,10 +43,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es" className={`${manrope.variable} ${archivoNarrow.variable}`}>
       <body>
-        <Script
+        <script
           id="localbusiness-jsonld"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(hairSalonJsonLd()) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(hairSalonJsonLd()).replace(/</g, "\\u003c") }}
         />
         <Navbar />
         {children}

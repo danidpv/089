@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { siteConfig } from "./src/data/site-config";
+
+const legacyProductionHost = "089barberia-profesional.vercel.app";
 
 const contentSecurityPolicy = [
   "default-src 'self'",
@@ -23,6 +26,16 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: legacyProductionHost.replaceAll(".", "\\.") }],
+        destination: `${siteConfig.siteUrl}/:path*`,
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [
